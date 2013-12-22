@@ -98,6 +98,7 @@ GEM
     multi_json (1.8.2)
     mysql2 (0.3.14)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -164,6 +165,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails (~> 2.3.0)
   mysql2
+  pg
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   thin
