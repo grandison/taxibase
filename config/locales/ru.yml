@@ -93,3 +93,10 @@ ru:
   time:
     formats:
       long: "%Y-%m-%d"
+  devise:
+    failure:
+      admin_user:
+        unauthenticated: ""
+    sessions:
+      admin_user:
+        signed_in: "Добро пожаловать!"
