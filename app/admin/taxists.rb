@@ -12,5 +12,6 @@ ActiveAdmin.register Taxist do
     column :last_name
     column :third_name
     column :address
+    default_actions
   end
 end
