@@ -64,7 +64,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    eventmachine (1.0.0)
+    eventmachine (1.0.3)
     execjs (2.0.2)
     fastercsv (1.5.5)
     formtastic (2.2.1)
