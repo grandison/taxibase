@@ -1,14 +1,27 @@
-ActiveAdmin.register Taxist do
-  actions :all, :except => [:new]
-
+ActiveAdmin.register NotCheckedTaxist do
   filter :first_name
   filter :last_name
   filter :third_name
   filter :address
 
-  menu :priority => 1
+  scope_to :current_admin_user, :association_method => :not_checked_taxists
 
-  scope_to :current_admin_user, :association_method => :checked_taxists
+  member_action :check, :method => :put do
+    taxist = Taxist.find(params[:id])
+    taxist.check!
+    redirect_to({:action => :show}, :notice => "Проверен!")
+  end
+
+  member_action :create, :method => :post do
+    params[:not_checked_taxist] = params[:not_checked_taxist].merge(user_id: current_admin_user.id)
+    create! do |format|
+      format.html { redirect_to(not_checked_taxists_path, :notice => "Отправлено на модерацию!") }
+    end
+  end
+
+  action_item :only => [:edit,:show], :if => proc{ current_admin_user.can?(:check, Taxist) } do
+    link_to('Пометить как проверенного!', check_taxist_path(not_checked_taxist), method: :put)
+  end
 
   index do
     column :photo do |taxist|
@@ -35,7 +48,6 @@ ActiveAdmin.register Taxist do
       row :third_name
       row :address
     end
-    render "addons"
   end
 
   form do |f|

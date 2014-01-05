@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = :ru
   end
+
+  def access_denied(exception)
+    redirect_to dashboard_path, :alert => exception.message
+  end
 end

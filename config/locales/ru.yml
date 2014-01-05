@@ -1,5 +1,13 @@
 ru:
   active_admin:
+    batch_actions:
+      labels:
+        check: Пометить как проверенное
+    scopes:
+      not_checked: Не проверенные
+      checked: Проверенные
+    access_denied:
+      message: "Доступ запрещен!"
     dashboard: Информация
     dashboard_welcome:
       welcome: "Здесь будет информация о проекте"
@@ -84,12 +92,35 @@ ru:
       taxist:
         one: Таксист
         other: Таксисты
+      not_checked_taxist:
+        one: "Непроверенная анкета"
+        other: "Непроверенные анкеты"
+      level:
+        one: Уровень доступа
+        other: Уровни доступа
+      admin_user:
+        one: Пользователь
+        other: Пользователи
     attributes:
       taxist: 
         first_name: Имя
         last_name: Фамилия
         third_name: Отчество
         address: Адрес
+        checked: Проверен
+      level:
+        number: уровень
+        name: название
+      admin_user:
+        strict_password: "Пароль"
+        level: "Уровень доступа"
+        email: "Емейл"
+    errors:
+      models:
+        taxist:
+          attributes:
+            first_name:
+              blank: "Укажите имя!"
   time:
     formats:
       long: "%Y-%m-%d"
@@ -100,3 +131,55 @@ ru:
     sessions:
       admin_user:
         signed_in: "Добро пожаловать!"
+  formtastic:
+    wysihtml5:
+      command:
+        bold: "Bold"
+        italic: "Italic"
+        link: "Link"
+        image: "Image"
+        ul: "Unordered list"
+        ol: "Ordered list"
+        source: "Show HTML"
+        underline: "Underline"
+        outdent: "Outdent"
+        indent: "Indent"
+      block_style: "Block style"
+      blocks:
+        h1: "Heading 1"
+        h2: "Heading 2"
+        h3: "Heading 3"
+        h4: "Heading 4"
+        h5: "Heading 5"
+        h6: "Heading 6"
+        p: "Paragraph"
+
+      dialog:
+        cancel: "Cancel"
+        ok: "OK"
+        image:
+          dialog_title: "Insert a new image"
+          url_title: "External image"
+          gallery_title: "Gallery"
+          upload_title: "Upload"
+          url: "URL:"
+          alignment: "Alignment:"
+          default: "None"
+          left: "Left"
+          right: "Right"
+          scale: "Scale:"
+          alt: "Alternate text:"
+          title: "<code>title</code> field:"
+        link:
+          dialog_title: "Insert a new link"
+          url_title: "URL"
+          email_title: "Email"
+          anchor_title: "Anchor"
+          url: "URL:"
+          text: "Text:"
+          rel: "<code>rel</code> field:"
+          title: "<code>title</code> field:"
+          email: "Email:"
+          anchor: "Anchor name:"
+          blank: "The link will open up a new page/tab"
+          your_text_here: "Your text here"

@@ -205,6 +205,8 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
-
+  config.on_unauthorized_access = :access_denied
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  config.cancan_ability_class = "Ability"
 
 end

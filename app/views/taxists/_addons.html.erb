@@ -1,0 +1,5 @@
+<%= semantic_form_for Addon.new do |f| %>
+  <%= hidden_field_tag 'taxist_id', @taxist.id %>
+  <%= f.input :text, as: :wysihtml5 %>
+  <%= f.actions :submit %>
+<% end %>
