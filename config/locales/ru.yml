@@ -41,7 +41,7 @@ ru:
     sidebars:
       filters: "Фильтры"
     pagination:
-      empty: "%{model} не найдено"
+      empty: "%{model} не найдено. <a href='/not_checked_taxists/new' target='blank'>Создать</a>"
       one: "Результат: <b>1</b> %{model}"
       one_page: "Результат: <b>%{n}</b> %{model}"
       multiple: "Результат: %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> из <b>%{total}</b>"
@@ -101,6 +101,9 @@ ru:
       admin_user:
         one: Пользователь
         other: Пользователи
+      addon:
+        one: Дополнение
+        other: Дополнения
     attributes:
       taxist: 
         first_name: Имя
@@ -108,6 +111,8 @@ ru:
         third_name: Отчество
         address: Адрес
         checked: Проверен
+        addons: Дополнения
+        photo: Фото
       level:
         number: уровень
         name: название
@@ -115,6 +120,10 @@ ru:
         strict_password: "Пароль"
         level: "Уровень доступа"
         email: "Емейл"
+      addon:
+        text: Текст
+      attachment:
+        file: Файл
     errors:
       models:
         taxist:

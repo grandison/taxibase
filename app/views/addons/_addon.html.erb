@@ -1,0 +1,6 @@
+<p>
+  <%= addon.text %>,
+  <% addon.attachments.each do |at| %>
+    <%= link_to "Скачать", at.file.url, target: "_blank" %>
+  <% end %>
+</p>

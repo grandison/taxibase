@@ -1,0 +1,11 @@
+<h3>Дополнения</h3>
+<% @addon = @taxist.addons.build %>
+<% @addon.attachments.build %>
+<%= semantic_form_for @addon do |f| %>
+  <%= hidden_field_tag "addon[taxist_id]", @taxist.id %>
+  <%= f.inputs :text %>
+  <%= f.inputs for: :attachments do |a| %>
+    <%= a.input :file %>
+  <% end %>
+  <%= f.actions :submit %>
+<% end %>

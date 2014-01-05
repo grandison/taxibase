@@ -5,6 +5,8 @@ class Ability
     user ||= AdminUser.new
     can :read, ActiveAdmin::Page, :name => "Dashboard"
     if user.level
+      can :manage, Attachment
+      can :manage, Addon
       if user.level.number == 0
         can :manage, :all
       else

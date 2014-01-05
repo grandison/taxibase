@@ -1,11 +1,10 @@
 ActiveAdmin.register AdminUser do     
+  config.filters = false
   index do                            
     column :email
     column :level                  
     default_actions                   
   end                                 
-
-  filter :email                       
 
   form do |f|                         
     f.inputs "Admin Details" do       

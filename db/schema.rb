@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140105141814) do
+ActiveRecord::Schema.define(:version => 20140105145122) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,6 +67,13 @@ ActiveRecord::Schema.define(:version => 20140105141814) do
     t.string   "storage_format"
     t.string   "storage_mime_type"
     t.string   "storage_size"
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.string   "file"
+    t.integer  "addon_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "levels", :force => true do |t|

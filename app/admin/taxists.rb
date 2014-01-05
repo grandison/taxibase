@@ -34,8 +34,11 @@ ActiveAdmin.register Taxist do
       row :last_name
       row :third_name
       row :address
+      row :addons do |taxist|
+        render taxist.addons
+      end
     end
-    render "addons"
+    render "addons/form"
   end
 
   form do |f|
