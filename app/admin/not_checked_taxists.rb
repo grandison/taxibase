@@ -9,7 +9,7 @@ ActiveAdmin.register NotCheckedTaxist do
   member_action :check, :method => :put do
     taxist = Taxist.find(params[:id])
     taxist.check!
-    redirect_to({:action => :show}, :notice => "Проверен!")
+    redirect_to(not_checked_taxists_path, :notice => "Проверен!")
   end
 
   member_action :create, :method => :post do
@@ -20,7 +20,7 @@ ActiveAdmin.register NotCheckedTaxist do
   end
 
   action_item :only => [:edit,:show], :if => proc{ current_admin_user.can?(:check, Taxist) } do
-    link_to('Пометить как проверенного!', check_taxist_path(not_checked_taxist), method: :put)
+    link_to('Пометить как проверенного!', check_not_checked_taxist_path(not_checked_taxist), method: :put)
   end
 
   index do
