@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  file: MyString
+  taxist_id: 1
+
+two:
+  file: MyString
+  taxist_id: 1

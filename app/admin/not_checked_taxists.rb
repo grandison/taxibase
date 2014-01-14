@@ -51,12 +51,46 @@ ActiveAdmin.register NotCheckedTaxist do
   end
 
   form do |f|
-    f.inputs "Детали" do
+    f.inputs "" do
+      f.input :photo
       f.input :first_name
       f.input :last_name
       f.input :third_name
-      f.input :photo
+      f.input :birthdate
       f.input :address
+      f.input :pasport_number
+      f.input :pasport_info
+      f.has_many :pasport_scans do |ps|
+        ps.input :file
+      end
+      f.input :vodit_ustov_number
+      f.input :vodit_ustov_date
+      f.input :vodit_ustov_file
+      f.has_many :taxist_relatives do |tr|
+        tr.input :first_name
+        tr.input :last_name
+        tr.input :third_name
+        tr.input :work_place
+        tr.input :work_post
+        tr.input :home_phone
+        tr.input :mobile_phone
+        tr.input :email
+      end
+      f.input :anketa
+      f.input :pozivnoy
+      f.input :fssp_info
+      f.has_many :accidents do |ac|
+        ac.input :info
+        ac.has_many :attachments do |at|
+          at.input :file
+        end
+      end
+      f.has_many :reputations do |rep|
+        rep.input :info
+        rep.has_many :attachments do |at|
+          at.input :file
+        end
+      end
     end
     f.actions
   end

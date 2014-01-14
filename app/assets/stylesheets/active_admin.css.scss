@@ -8,7 +8,7 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-$primary-color: #468966 !default;
+$primary-color: #666666 !default;
 $secondary-color: #f0f0f0 !default;
 $text-color: #323537 !default;
 $link-color: #38678b !default;
@@ -19,7 +19,35 @@ $table-stripe-color: lighten($primary-color, 57%) !default;
 $table-selected-color: #d9e4ec !default;
 $error-color: #932419 !default;
 @import "active_admin/mixins";
+@mixin section-background {
+  background: #f2f2dc;
+  @include rounded(4px);
+  @include inset-shadow(0,1px,4px, #ddd);
+}
 @import "active_admin/base";
+
+textarea {
+  height: 15px;
+}
+
+
+body.active_admin form fieldset ol > div.has_many {
+  margin: 50px 20px;
+  @include rounded(4px);
+  background-color: #ccc;
+}
+
+body.active_admin table.index_table tr.even td  {
+  background: #f2f2dc;
+}
+
+body.active_admin form fieldset ol > li {
+  display: inline-block;
+  width: 48%;
+  label {
+    width: 100px;
+  }
+}
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:

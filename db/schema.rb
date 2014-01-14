@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140105145122) do
+ActiveRecord::Schema.define(:version => 20140114125941) do
+
+  create_table "accidents", :force => true do |t|
+    t.text     "info"
+    t.integer  "taxist_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -72,8 +79,10 @@ ActiveRecord::Schema.define(:version => 20140105145122) do
   create_table "attachments", :force => true do |t|
     t.string   "file"
     t.integer  "addon_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "attachmentable_id"
+    t.string   "attachmentable_type"
   end
 
   create_table "levels", :force => true do |t|
@@ -83,16 +92,53 @@ ActiveRecord::Schema.define(:version => 20140105145122) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "pasport_scans", :force => true do |t|
+    t.string   "file"
+    t.integer  "taxist_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "reputations", :force => true do |t|
+    t.text     "info"
+    t.integer  "taxist_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "taxist_relatives", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "third_name"
+    t.text     "work_place"
+    t.string   "work_post"
+    t.string   "email"
+    t.string   "mobile_phone"
+    t.string   "home_phone"
+    t.integer  "taxist_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "taxists", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "third_name"
     t.string   "photo"
     t.text     "address"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.boolean  "checked",    :default => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.boolean  "checked",            :default => false
     t.integer  "user_id"
+    t.string   "pasport_number"
+    t.text     "pasport_info"
+    t.string   "vodit_ustov_number"
+    t.date     "vodit_ustov_date"
+    t.string   "vodit_ustov_file"
+    t.string   "anketa"
+    t.string   "pozivnoy"
+    t.text     "fssp_info"
+    t.date     "birthdate"
   end
 
 end

@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def access_denied(exception)
     redirect_to dashboard_path, :alert => exception.message
   end
+
+  def current_user
+    current_admin_user
+  end
 end

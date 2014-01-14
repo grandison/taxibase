@@ -93,7 +93,7 @@ ru:
         one: Таксист
         other: Таксисты
       not_checked_taxist:
-        one: "Непроверенная анкета"
+        one: "непроверенную анкету"
         other: "Непроверенные анкеты"
       level:
         one: Уровень доступа
@@ -104,15 +104,39 @@ ru:
       addon:
         one: Дополнение
         other: Дополнения
+      taxist_relative:
+        one: Родственника
+        other: Родственники
+      accident:
+        one: Аварию
+        other: Аварии
+      attachment:
+        one: файл
+        other: Файлы
+      reputation:
+        one: отзыв
+        other: Отзывы
+      pasport_scan:
+        one: скан паспорта
+        other: Сканы паспорта
     attributes:
       taxist: 
         first_name: Имя
         last_name: Фамилия
         third_name: Отчество
-        address: Адрес
+        address: Место проживания
         checked: Проверен
         addons: Дополнения
         photo: Фото
+        pasport_number: Номер паспорта
+        pasport_info: Когда и кем выдан
+        vodit_ustov_number: Номер водительского удостоверения
+        vodit_ustov_date: Дата выдачи водительского удостоверения
+        vodit_ustov_file: Скан водительского удостоверения
+        pozivnoy: Позывной
+        anketa: Скан анкеты
+        fssp_info: Информация от судебных приставов
+        birthdate: Дата рождения
       level:
         number: уровень
         name: название
@@ -123,6 +147,16 @@ ru:
       addon:
         text: Текст
       attachment:
+        file: Файл
+      taxist_relative:
+        first_name: Имя
+        last_name: Фамилия
+        third_name: Отчество
+      accident:
+        info: Описание
+      reputation:
+        info: Текст
+      pasport_scan:
         file: Файл
     errors:
       models:
