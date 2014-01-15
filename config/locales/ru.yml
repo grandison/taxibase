@@ -87,6 +87,8 @@ ru:
       links:
         sign_in: "Войти"
         forgot_your_password: "Забыли пароль?"
+    page:
+      statistic: "Статистика"
   activerecord:
     models:
       taxist:
