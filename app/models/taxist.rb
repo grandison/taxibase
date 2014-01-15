@@ -1,5 +1,5 @@
 class Taxist < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :third_name, :address, :vodit_ustov_number, :pozivnoy, :fssp_info, :accidents_attributes, :user_id, :vodit_ustov_date, :vodit_ustov_file, :taxist_relatives_attributes, :reputations_attributes, :pasport_scans_attributes, :birthdate
+  attr_accessible :first_name, :last_name, :third_name, :address, :vodit_ustov_number, :pozivnoy, :fssp_info, :accidents_attributes, :user_id, :vodit_ustov_date, :vodit_ustov_file, :taxist_relatives_attributes, :reputations_attributes, :pasport_scans_attributes, :birthdate, :pasport_number, :pasport_info, :anketa, :photo
   mount_uploader :photo, PhotoUploader
   mount_uploader :vodit_ustov_file, PhotoUploader
   mount_uploader :anketa, PhotoUploader

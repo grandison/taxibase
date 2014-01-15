@@ -102,8 +102,8 @@ ru:
         one: Пользователь
         other: Пользователи
       addon:
-        one: Дополнение
-        other: Дополнения
+        one: Комментарий
+        other: Комментарии
       taxist_relative:
         one: Родственника
         other: Родственники
@@ -115,7 +115,7 @@ ru:
         other: Файлы
       reputation:
         one: отзыв
-        other: Отзывы
+        other: Репутация
       pasport_scan:
         one: скан паспорта
         other: Сканы паспорта
@@ -126,10 +126,11 @@ ru:
         third_name: Отчество
         address: Место проживания
         checked: Проверен
-        addons: Дополнения
+        addons: Комментарии
         photo: Фото
         pasport_number: Номер паспорта
         pasport_info: Когда и кем выдан
+        pasport_scans: Сканы паспорта
         vodit_ustov_number: Номер водительского удостоверения
         vodit_ustov_date: Дата выдачи водительского удостоверения
         vodit_ustov_file: Скан водительского удостоверения
@@ -137,6 +138,9 @@ ru:
         anketa: Скан анкеты
         fssp_info: Информация от судебных приставов
         birthdate: Дата рождения
+        taxist_relatives: Родственники
+        accidents: Аварии
+        reputations: Репутация
       level:
         number: уровень
         name: название
