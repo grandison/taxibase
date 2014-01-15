@@ -41,12 +41,8 @@ body.active_admin table.index_table tr.even td  {
   background: #f2f2dc;
 }
 
-body.active_admin form fieldset ol > li {
-  display: inline-block;
-  width: 48%;
-  label {
-    width: 100px;
-  }
+#admin_user_remember_me_input {
+  display:none;
 }
 
 // Overriding any non-variable SASS must be done after the fact.
