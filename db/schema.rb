@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140114125941) do
+ActiveRecord::Schema.define(:version => 20140115182835) do
 
   create_table "accidents", :force => true do |t|
     t.text     "info"
@@ -34,6 +34,26 @@ ActiveRecord::Schema.define(:version => 20140114125941) do
   add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
   add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
+
+  create_table "active_admin_gallery_images", :force => true do |t|
+    t.integer "imageable_id"
+    t.string  "imageable_type"
+    t.string  "imageable_relation"
+    t.string  "alt"
+    t.string  "title"
+    t.string  "image_name"
+    t.string  "image_uid"
+    t.integer "position"
+    t.integer "image_width"
+    t.integer "image_height"
+    t.float   "image_aspect_ratio"
+    t.integer "image_depth"
+    t.string  "image_format"
+    t.string  "image_mime_type"
+    t.string  "image_size"
+  end
+
+  add_index "active_admin_gallery_images", ["imageable_id", "imageable_type", "imageable_relation"], :name => "active_admin_gallery_images_imageable"
 
   create_table "addons", :force => true do |t|
     t.text     "text"
@@ -102,6 +122,13 @@ ActiveRecord::Schema.define(:version => 20140114125941) do
   create_table "reputations", :force => true do |t|
     t.text     "info"
     t.integer  "taxist_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "statistics", :force => true do |t|
+    t.text     "key"
+    t.text     "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
