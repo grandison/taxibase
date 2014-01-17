@@ -13,6 +13,18 @@ ActiveAdmin.register Taxist do
 
   scope_to :current_admin_user, :association_method => :checked_taxists
 
+  controller do 
+    def index
+      index! do |format|
+        if params[:q]
+          q = params[:q].to_hash
+          TaxistSearch.create(search: q)
+        end
+        format.html
+      end
+    end
+  end
+
   index do
     column :photo do |taxist|
       if taxist.photo.present?

@@ -31,3 +31,47 @@
     </tbody>
   </table>
 </div>
+
+<div class="index_as_table">
+  <table border="0" cellspacing="0" cellpadding="0" id="index_table_admin_users" class="index_table index" paginator="true">
+    <thead>
+      <tr>
+        <th>Количество посещений за сегодня</th>
+        <th>Количество посещений за месяц</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>
+          <%= AdminUser.where("current_sign_in_at > ?", Time.zone.now.beginning_of_day).count %>
+        </td>
+        <td>
+          <%= AdminUser.where("current_sign_in_at > ?", Time.zone.now.beginning_of_month).count %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="index_as_table">
+  <table border="0" cellspacing="0" cellpadding="0" id="index_table_admin_users" class="index_table index" paginator="true">
+    <thead>
+      <tr>
+        <th>Что ищут пользователи</th>
+        <th>Сколько раз</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% TaxistSearch.group(:search).count.each do |search, count|  %>
+      <tr class="odd">
+        <td>
+          <%= YAML::load(search) %>
+        </td>
+        <td>
+          <%= count %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

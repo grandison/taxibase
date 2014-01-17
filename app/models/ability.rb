@@ -7,6 +7,10 @@ class Ability
     if user.level
       can :manage, Attachment
       can :manage, Addon
+      can :view, :photo
+      can :view, :fio
+      can :view, :address
+      can :view, :pasport
       if user.level.number == 0 # Администратоо
         can :manage, :all
         can :check, Taxist

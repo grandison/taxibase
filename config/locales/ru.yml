@@ -29,9 +29,9 @@ ru:
     download: "Загрузка:"
     has_many_new: "Добавить %{model}"
     has_many_delete: "Удалить"
-    filter: "Фильтровать"
+    filter: "Искать"
     clear_filters: "Очистить"
-    search_field: "Искать по %{field}"
+    search_field: "%{field}"
     equal_to: "="
     greater_than: "больше"
     less_than: "меньше"
@@ -39,7 +39,7 @@ ru:
     logout: "Выйти"
     powered_by: "Powered by %{active_admin} %{version}"
     sidebars:
-      filters: "Фильтры"
+      filters: "Поиск"
     pagination:
       empty: "%{model} не найдено. <a href='/not_checked_taxists/new' target='blank'>Создать</a>"
       one: "Результат: <b>1</b> %{model}"
@@ -177,6 +177,7 @@ ru:
     failure:
       admin_user:
         unauthenticated: ""
+        not_found_in_database: "Пользователь не найден"
     sessions:
       admin_user:
         signed_in: "Добро пожаловать!"
