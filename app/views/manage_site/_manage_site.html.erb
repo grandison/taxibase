@@ -1,0 +1,5 @@
+<% if SiteParams.site_enabled? %>
+  <%= link_to "Выключить сайт", manage_site_disable_site_path, :method => :post %>
+<% else %>
+  <%= link_to "Включить сайт", manage_site_enable_site_path, :method => :post %>
+<% end %>

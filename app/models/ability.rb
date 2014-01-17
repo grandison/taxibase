@@ -16,6 +16,10 @@ class Ability
         can :check, Taxist
       end
 
+      unless SiteParams.site_enabled?
+        return
+      end
+
       if user.level.number == 1 # Модератор
         can :manage, NotCheckedTaxist
         can :check, Taxist

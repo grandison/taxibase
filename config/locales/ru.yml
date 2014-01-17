@@ -89,6 +89,7 @@ ru:
         forgot_your_password: "Забыли пароль?"
     page:
       statistic: "Статистика"
+      manage_site: "Управление сайтом"
   activerecord:
     models:
       taxist:
