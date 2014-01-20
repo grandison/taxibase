@@ -3,6 +3,9 @@ ActiveAdmin.register NotCheckedTaxist do
   filter :last_name
   filter :third_name
   filter :address
+  filter :pasport_number
+  filter :vodit_ustov_number
+  filter :pozivnoy
 
   scope_to :current_admin_user, :association_method => :not_checked_taxists
 
@@ -32,12 +35,7 @@ ActiveAdmin.register NotCheckedTaxist do
     column :first_name
     column :last_name
     column :third_name
-    column :address
-    column :pasport_number
-    column :pasport_info
-    column :vodit_ustov_number
-    column :vodit_ustov_date
-    column :pozivnoy
+    column :birthdate
     default_actions
   end
 

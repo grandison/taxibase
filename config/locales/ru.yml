@@ -134,9 +134,9 @@ ru:
         pasport_number: Номер паспорта
         pasport_info: Когда и кем выдан
         pasport_scans: Сканы паспорта
-        vodit_ustov_number: Номер водительского удостоверения
-        vodit_ustov_date: Дата выдачи водительского удостоверения
-        vodit_ustov_file: Скан водительского удостоверения
+        vodit_ustov_number: Номер ВУ
+        vodit_ustov_date: Дата выдачи ВУ
+        vodit_ustov_file: Скан ВУ
         pozivnoy: Позывной
         anketa: Скан анкеты
         fssp_info: Информация от судебных приставов

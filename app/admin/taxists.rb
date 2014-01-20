@@ -36,16 +36,7 @@ ActiveAdmin.register Taxist do
       column :last_name
       column :third_name
     end
-    if current_admin_user.can?(:view, :address)
-      column :address
-    end
-    if current_admin_user.can?(:view, :pasport)
-      column :pasport_number
-      column :pasport_info
-    end
-    column :vodit_ustov_number
-    column :vodit_ustov_date
-    column :pozivnoy
+    column :birthdate
     default_actions
   end
 

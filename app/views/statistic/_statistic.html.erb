@@ -65,7 +65,7 @@
       <% TaxistSearch.group(:search).count.each do |search, count|  %>
       <tr class="odd">
         <td>
-          <%= YAML::load(search) %>
+          <%= pretty_taxist_search(YAML::load(search)) %>
         </td>
         <td>
           <%= count %>
