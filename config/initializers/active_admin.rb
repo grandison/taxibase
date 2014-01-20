@@ -210,3 +210,14 @@ ActiveAdmin.setup do |config|
   config.cancan_ability_class = "Ability"
 
 end
+
+
+module ActiveAdmin
+  module Views
+    class Header < Component
+      def build_site_title
+        render "shared/logo"
+      end
+    end
+  end
+end
