@@ -16,7 +16,8 @@ class AdminUser < ActiveRecord::Base
   end
   delegate :can?, :cannot?, :to => :ability
 
-  if column_names.include?(:strict_password)
+
+  if ActiveRecord::Base.connection.table_exists?('admin_users') && column_names.include?(:strict_password)
     before_validation :set_strict_password
   end
 
