@@ -6,13 +6,20 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
+gem 'mysql2'
 group :development do
-  gem 'mysql2'
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rvm'
+  gem 'sextant'
 end
 
-group :production do
-  gem 'pg'
-end
+
+
+# group :production do
+  # gem 'pg'
+# end
 
 # Gems used only for assets and not required
 # in production environments by default.
