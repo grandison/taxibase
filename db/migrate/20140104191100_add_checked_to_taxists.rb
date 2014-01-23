@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCheckedToTaxists < ActiveRecord::Migration
   def change
     add_column :taxists, :checked, :boolean, default: false

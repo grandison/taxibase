@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateSiteParams < ActiveRecord::Migration
   def change
     create_table :site_params do |t|

@@ -105,6 +105,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.8.1)
+    magic_encoding (0.0.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -219,6 +220,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   jquery-rails (~> 2.3.0)
+  magic_encoding
   mysql2
   pry
   rails (= 3.2.11)

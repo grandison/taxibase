@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin::ViewsHelper #camelized file name
   def pretty_taxist_search(search_hash)
     search_hash.to_a.map do |key,value|

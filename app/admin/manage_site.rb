@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register_page "Manage Site" do
   menu if: ->{current_admin_user.can?(:manage, :site)}, label: ->{ I18n.translate("active_admin.page.manage_site") }
 

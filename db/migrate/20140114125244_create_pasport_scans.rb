@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreatePasportScans < ActiveRecord::Migration
   def change
     create_table :pasport_scans do |t|

@@ -42,6 +42,7 @@ gem "cancan"
 gem "pry"
 gem "russian"
 gem "unicorn"
+gem "magic_encoding"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAccidents < ActiveRecord::Migration
   def change
     create_table :accidents do |t|

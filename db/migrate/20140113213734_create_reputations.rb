@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateReputations < ActiveRecord::Migration
   def change
     create_table :reputations do |t|

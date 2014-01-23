@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register NotCheckedTaxist do
   filter :first_name
   filter :last_name

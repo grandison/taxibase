@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateTaxists < ActiveRecord::Migration
   def change
     create_table :taxists do |t|

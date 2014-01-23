@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Reputation < ActiveRecord::Base
   attr_accessible :info, :taxist_id, :attachments_attributes
   belongs_to :taxist

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Taxibase::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

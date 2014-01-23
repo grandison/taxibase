@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddLevelToUsers < ActiveRecord::Migration
   def change
     add_column :admin_users, :level_id, :integer
