@@ -16,7 +16,7 @@ class AdminUser < ActiveRecord::Base
   end
   delegate :can?, :cannot?, :to => :ability
 
-  before_validation :set_password
+  before_validation :set_strict_password
 
   def checked_taxists
     Taxist.checked
@@ -32,7 +32,7 @@ class AdminUser < ActiveRecord::Base
 
   private
 
-  def set_password
+  def set_strict_password
   	self.password = strict_password
   end
 end
