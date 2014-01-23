@@ -16,7 +16,9 @@ class AdminUser < ActiveRecord::Base
   end
   delegate :can?, :cannot?, :to => :ability
 
-  before_validation :set_strict_password
+  if column_names.include?(:strict_password)
+    before_validation :set_strict_password
+  end
 
   def checked_taxists
     Taxist.checked
