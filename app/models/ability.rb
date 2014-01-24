@@ -40,7 +40,7 @@ class Ability
         cannot :view, :fio
         cannot :view, :address
         cannot :view, :pasport
-        cannot :read, NotCheckedTaxist
+        # cannot :read, NotCheckedTaxist
         cannot :check, Taxist
       end
     end

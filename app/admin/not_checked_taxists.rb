@@ -33,11 +33,11 @@ ActiveAdmin.register NotCheckedTaxist do
         image_tag(taxist.photo, style: "max-width:100px;")
       end
     end
-    column :first_name
-    column :last_name
-    column :third_name
-    column :birthdate
-    default_actions
+    column :vodit_ustov_number
+    column :fio do |taxist|
+      link_to(taxist.fio, taxist)
+    end
+    column :pozivnoy
   end
 
   show do

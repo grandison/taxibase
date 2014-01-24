@@ -57,7 +57,49 @@
   <table border="0" cellspacing="0" cellpadding="0" id="index_table_admin_users" class="index_table index" paginator="true">
     <thead>
       <tr>
-        <th>Что ищут пользователи</th>
+        <th>Кто сейчас на сайте</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% AdminUser.where("last_active_at > ?", Time.zone.now - 5.minutes).each do |admin_user| %>
+      <tr class="odd">
+        <td>
+          <%= admin_user.email %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="index_as_table">
+  <table border="0" cellspacing="0" cellpadding="0" id="index_table_admin_users" class="index_table index" paginator="true">
+    <thead>
+      <tr>
+        <th>Что находят пользователи</th>
+        <th>Сколько раз</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Taxist.where("search_count > 0").order("search_count DESC").each do |taxist|  %>
+      <tr class="odd">
+        <td>
+          <%= link_to(taxist.fio, taxist) %>
+        </td>
+        <td>
+          <%= taxist.search_count %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="index_as_table">
+  <table border="0" cellspacing="0" cellpadding="0" id="index_table_admin_users" class="index_table index" paginator="true">
+    <thead>
+      <tr>
+        <th>Что не находят пользователи</th>
         <th>Сколько раз</th>
       </tr>
     </thead>

@@ -8,7 +8,7 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-$primary-color: #666666 !default;
+$primary-color: #3C3C3C !default;
 $secondary-color: #f0f0f0 !default;
 $text-color: #323537 !default;
 $link-color: #38678b !default;
@@ -26,10 +26,21 @@ $error-color: #932419 !default;
 }
 @import "active_admin/base";
 
+body.active_admin {
+  font-family: Verdana;
+}
+
 textarea {
   height: 15px;
 }
 
+body.active_admin #header #utility_nav {
+  margin-top: 14px;
+}
+
+body.active_admin.logged_out {
+  background: #3C3C3C;
+}
 
 body.active_admin form fieldset ol > div.has_many {
   margin: 50px 20px;
@@ -47,7 +58,8 @@ body.active_admin table.index_table tr.even td  {
 
 .logo {
   float:left;
-  margin-right: 20px;
+  margin-right: 40px !important;
+  margin-left: 25px !important;
   height: 65px;
   width: 360px;
   background: url('/images/logo.png')
@@ -57,8 +69,9 @@ body.active_admin table.index_table tr.even td  {
 body.active_admin #header ul.tabs {
   margin-top: 14px;
   height: 50px;
+  float: none;
   li {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -67,9 +80,47 @@ body.active_admin #header {
   padding-left:0px;
 }
 
-#current_user {
-  display:none !important;
+input, textarea {
+  background-color: rgb(250, 255, 189);
+  background-image: none;
+  color: rgb(0, 0, 0);
 }
+
+#login h2 {
+  display: none;
+}
+
+body.active_admin.logged_out #content_wrapper #active_admin_content {
+  width: 395px;
+}
+
+body.active_admin a, body.active_admin a:link, body.active_admin a:visited {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+
+body.active_admin.logged_out #content_wrapper {
+  width: 455px;
+}
+
+body.active_admin form fieldset ol > li label {
+  margin-top: 6px;
+}
+
+body.active_admin #header ul.tabs > li.current > a {
+  color: #faffbd;
+  background: none;
+}
+
+body.active_admin #header ul.tabs > li:hover > a {
+  background: none;
+  color: #faffbd;
+}
+
+body.active_admin #header a, body.active_admin #header a:link {
+  color: #fff;
+}
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //

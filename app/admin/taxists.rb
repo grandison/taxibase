@@ -2,7 +2,7 @@
 ActiveAdmin.register Taxist do
   actions :all, :except => [:new]
 
-  filter :first_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
+  filter :first_name
   filter :last_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
   filter :third_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
   filter :address, :if => ->(user){ current_admin_user.can?(:view, :address)}
@@ -18,8 +18,12 @@ ActiveAdmin.register Taxist do
     def index
       index! do |format|
         if params[:q]
-          q = params[:q].to_hash
-          TaxistSearch.create(search: q)
+          if @taxists.count > 0
+            @taxists.update_all("search_count = search_count + 1")
+          else
+            q = params[:q].to_hash
+            TaxistSearch.create(search: q)
+          end
         end
         format.html
       end
@@ -32,13 +36,17 @@ ActiveAdmin.register Taxist do
         image_tag(taxist.photo, style: "max-width:100px;")
       end
     end
+    column :vodit_ustov_number
     if current_admin_user.can?(:view, :fio)
-      column :first_name
-      column :last_name
-      column :third_name
+      column :fio do |taxist|
+        link_to(taxist.fio, taxist)
+      end
+    else
+      column :first_name do |taxist|
+        link_to(taxist.first_name, taxist)
+      end
     end
-    column :birthdate
-    default_actions
+    column :pozivnoy
   end
 
   show do
@@ -54,6 +62,8 @@ ActiveAdmin.register Taxist do
         row :first_name
         row :last_name
         row :third_name
+      else
+        row :first_name
       end
       if current_admin_user.can?(:view, :address)
         row :address

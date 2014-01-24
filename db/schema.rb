@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117112939) do
+ActiveRecord::Schema.define(:version => 20140124153823) do
 
   create_table "accidents", :force => true do |t|
     t.text     "info"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20140117112939) do
     t.datetime "updated_at",                             :null => false
     t.integer  "level_id"
     t.string   "strict_password"
+    t.time     "last_active_at"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -179,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20140117112939) do
     t.string   "pozivnoy"
     t.text     "fssp_info"
     t.date     "birthdate"
+    t.integer  "search_count",       :default => 0
   end
 
 end

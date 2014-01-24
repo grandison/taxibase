@@ -19,4 +19,8 @@ class Taxist < ActiveRecord::Base
   def check!
   	update_attribute(:checked, true)
   end
+
+  def fio
+    "#{first_name} #{last_name} #{third_name}"
+  end
 end

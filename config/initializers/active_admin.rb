@@ -222,3 +222,16 @@ module ActiveAdmin
     end
   end
 end
+
+
+class ActiveAdmin::Views::Pages::Base < Arbre::HTML::Document
+  private
+ 
+  # Renders the content for the footer
+  def build_footer
+    div :id => "footer" do
+      para "2014г. Все права защищены. По всем вопросам обращаться <a href='mailto:info@sitename.com'>info@sitename.com</a>»".html_safe
+    end
+  end
+ 
+end
