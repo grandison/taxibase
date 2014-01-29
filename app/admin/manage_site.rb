@@ -12,7 +12,7 @@ ActiveAdmin.register_page "Manage Site" do
     redirect_to manage_site_path, :notice => "Сайт включен!"
   end
 
-  content do
+  content title: "Управление сайтом" do
     render "manage_site"
   end
 end

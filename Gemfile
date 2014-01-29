@@ -33,7 +33,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'activeadmin'
+gem 'activeadmin', path: "./activeadmin"
 gem 'thin'
 gem "jquery-rails", "~> 2.3.0" 
 gem 'rails_on_heroku'

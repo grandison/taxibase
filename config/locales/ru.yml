@@ -93,34 +93,34 @@ ru:
   activerecord:
     models:
       taxist:
-        one: Таксист
+        one: ""
         other: Таксисты
       not_checked_taxist:
-        one: "непроверенную анкету"
+        one: ""
         other: "Непроверенные анкеты"
       level:
         one: Уровень доступа
         other: Уровни доступа
       admin_user:
-        one: Пользователь
+        one: ""
         other: Пользователи
       addon:
-        one: Комментарий
+        one: ""
         other: Комментарии
       taxist_relative:
-        one: Родственника
+        one: ""
         other: Родственники
       accident:
-        one: Аварию
+        one: ""
         other: Аварии
       attachment:
-        one: файл
+        one: ""
         other: Файлы
       reputation:
-        one: отзыв
+        one: ""
         other: Репутация
       pasport_scan:
-        one: скан паспорта
+        one: ""
         other: Сканы паспорта
     attributes:
       taxist: 

@@ -8,9 +8,9 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-$primary-color: #3C3C3C !default;
+$primary-color: #919191 !default;
 $secondary-color: #f0f0f0 !default;
-$text-color: #323537 !default;
+$text-color: #919191 !default;
 $link-color: #38678b !default;
 $section-header-text-color: $primary-color !default;
 $current-menu-item-background: lighten($primary-color, 12%) !default;
@@ -20,26 +20,126 @@ $table-selected-color: #d9e4ec !default;
 $error-color: #932419 !default;
 @import "active_admin/mixins";
 @mixin section-background {
-  background: #f2f2dc;
+  background: #1F2629;
   @include rounded(4px);
   @include inset-shadow(0,1px,4px, #ddd);
 }
-@import "active_admin/base";
-
-body.active_admin {
-  font-family: Verdana;
+@mixin light-button {
+  color: #cfdde3;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 110px;
+  height: 40px;
+  display: inline-block;
+  background: #2f393c;
+  background: -webkit-gradient(linear,0 0,0 100%,from(#2f393c),to(#1c2224));
+  background: -webkit-linear-gradient(top,#2f393c,#1c2224);
+  background: -moz-linear-gradient(top,#2f393c,#1c2224);
+  background: -o-linear-gradient(top,#2f393c,#1c2224);
+  background: linear-gradient(to bottom,#2f393c,#1c2224);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f393c',endColorstr='#ff1c2224',GradientType=0);
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+
+@mixin dark-button {
+  color: #cfdde3;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 110px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  background: #2f393c;
+  background: -webkit-gradient(linear,0 0,0 100%,from(#2f393c),to(#1c2224));
+  background: -webkit-linear-gradient(top,#2f393c,#1c2224);
+  background: -moz-linear-gradient(top,#2f393c,#1c2224);
+  background: -o-linear-gradient(top,#2f393c,#1c2224);
+  background: linear-gradient(to bottom,#2f393c,#1c2224);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f393c',endColorstr='#ff1c2224',GradientType=0);
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import "active_admin/base";
+
+
 textarea {
-  height: 15px;
+  height: 20px;
+}
+
+body.active_admin form fieldset ol > li label {
+  display: block;
+  width: 20%;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+body.active_admin form input[type=submit] {
+  color:#ffdab9;
+  text-align: center;
+  width: 100%;
+  padding: 14px 22px;
+  background: #ce7416;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#ce7416),color-stop(.5,#c96a14),color-stop(.501,#bd5a03),color-stop(1,#b65103));
+  background: -webkit-linear-gradient(top,#ce7416 0%,#c96a14 50%,#bd5a03 50.1%,#b65103 100%);
+  background: -moz-linear-gradient(top,#ce7416 0%,#c96a14 50%,#bd5a03 50.1%,#b65103 100%);
+  background: -ms-linear-gradient(top,#ce7416 0%,#c96a14 50%,#bd5a03 50.1%,#b65103 100%);
+  background: linear-gradient(to bottom,#ce7416 0%,#c96a14 50%,#bd5a03 50.1%,#b65103 100%);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce7416',endColorstr='#b65103',GradientType=0);
+  border-top: 1px solid #fb9b46;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 11px;
+  line-height: 12px;
+  text-transform: uppercase;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+body.active_admin form input[type=submit]:not(.disabled):hover {
+  background: #d97b18;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#d97b18),color-stop(.5,#d57116),color-stop(.501,#ce6204),color-stop(1,#c95804));
+  background: -webkit-linear-gradient(top,#d97b18 0%,#d57116 50%,#ce6204 50.1%,#c95804 100%);
+  background: -moz-linear-gradient(top,#d97b18 0%,#d57116 50%,#ce6204 50.1%,#c95804 100%);
+  background: -ms-linear-gradient(top,#d97b18 0%,#d57116 50%,#ce6204 50.1%,#c95804 100%);
+  background: linear-gradient(to bottom,#d97b18 0%,#d57116 50%,#ce6204 50.1%,#c95804 100%);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d97b18',endColorstr='#c95804',GradientType=0);
+}
+
+body.active_admin a, body.active_admin a:link, body.active_admin a:visited {
+  color: #919191 !important;
+  text-transform: uppercase;
+}
+
+body.active_admin.logged_out #login a {
+  margin-top: -40px;
 }
 
 body.active_admin #header #utility_nav {
-  margin-top: 14px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  float: none;
 }
 
-body.active_admin.logged_out {
-  background: #3C3C3C;
+body.active_admin {
+  background: #061115;
+  font: normal 10px 'Helvetica Neue',Helvetica,Arial,Sans-Serif;
+  color: #fff;
 }
 
 body.active_admin form fieldset ol > div.has_many {
@@ -49,7 +149,28 @@ body.active_admin form fieldset ol > div.has_many {
 }
 
 body.active_admin table.index_table tr.even td  {
-  background: #f2f2dc;
+  background: #373E44;
+}
+
+body.active_admin #title_bar {
+  width: 100%;
+  background: #0e2027;
+  background: -webkit-gradient(linear,0 0,0 100%,from(#0e2027),to(#0f171d));
+  background: -webkit-linear-gradient(top,#0e2027,#0f171d);
+  background: -moz-linear-gradient(top,#0e2027,#0f171d);
+  background: -o-linear-gradient(top,#0e2027,#0f171d);
+  background: linear-gradient(to bottom,#0e2027,#0f171d);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0e2027',endColorstr='#ff0f171d',GradientType=0);
+  position: relative;
+  h2 {
+    color: #cfdde3;
+    font-size: 2.8em;
+    line-height: 22px;
+    font-weight: 300;
+    float: left;
+    padding: 0 30px;
+    border-left: 1px solid #2d4149;
+  }
 }
 
 #admin_user_remember_me_input {
@@ -57,33 +178,51 @@ body.active_admin table.index_table tr.even td  {
 }
 
 .logo {
-  float:left;
-  margin-right: 40px !important;
-  margin-left: 25px !important;
-  height: 65px;
-  width: 360px;
-  background: url('/images/logo.png')
+  display: block;
+  margin: 0 auto !important;
+  height: 88px;
+  width: 454px;
+  background: url('/images/logo_black.jpg')
 
 }
 
 body.active_admin #header ul.tabs {
-  margin-top: 14px;
+  text-align: center;
+  display: block;
   height: 50px;
   float: none;
   li {
-    font-size: 14px;
+    a { 
+      font-size: 14px;
+    }
   }
 }
 
+body.active_admin .sidebar_section label {
+  font-size: 12px;
+}
+
+body.active_admin table tr td {
+  font-size: 12px;
+  color: #919191 !important;
+}
+
 body.active_admin #header {
-  height: 60px;
+  height: 100%;
   padding-left:0px;
 }
 
 input, textarea {
-  background-color: rgb(250, 255, 189);
-  background-image: none;
-  color: rgb(0, 0, 0);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 5px 0;
+  background-color: #283235 !important;
+  border-style: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  outline: none;
 }
 
 #login h2 {
@@ -91,20 +230,21 @@ input, textarea {
 }
 
 body.active_admin.logged_out #content_wrapper #active_admin_content {
-  width: 395px;
+  width: 454px;
 }
 
 body.active_admin a, body.active_admin a:link, body.active_admin a:visited {
   color: #3c3c3c;
   text-decoration: none;
+  font-size: 12px;
 }
 
 body.active_admin.logged_out #content_wrapper {
-  width: 455px;
+  width: 454px;
 }
 
 body.active_admin form fieldset ol > li label {
-  margin-top: 6px;
+  margin-top: 12px;
 }
 
 body.active_admin #header ul.tabs > li.current > a {
@@ -119,6 +259,89 @@ body.active_admin #header ul.tabs > li:hover > a {
 
 body.active_admin #header a, body.active_admin #header a:link {
   color: #fff;
+}
+
+body.active_admin.logged_out #content_wrapper #active_admin_content {
+  padding: 0px;
+}
+
+body.active_admin.logged_out #content_wrapper #active_admin_content {
+  background: none;
+}
+
+body.active_admin .table_tools {
+  display: none;
+}
+
+body.active_admin #title_bar {
+}
+
+body.active_admin table.index_table th,  {
+  color: #cfdde3;
+  font-size: 16px;
+  font-weight: 500;
+  height: 44px;
+  background: #1f2629;
+  border-top: 1px solid #000;
+  border-right: 1px solid #16191d;
+  border-bottom: 1px solid #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body.active_admin .sidebar_section label {
+  color: #919191;
+}
+
+body.active_admin table.index_table th a, body.active_admin table.index_table th a:link, body.active_admin table.index_table th a:visited {
+  color: #cfdde3 !important;
+  font-weight: 500;
+}
+
+body.active_admin form.filter_form a.clear_filters_btn, body.active_admin form fieldset.buttons li.cancel a, body.active_admin form fieldset.actions li.cancel a {
+  color: #cfdde3;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 110px;
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  background: #2f393c;
+  background: -webkit-gradient(linear,0 0,0 100%,from(#2f393c),to(#1c2224));
+  background: -webkit-linear-gradient(top,#2f393c,#1c2224);
+  background: -moz-linear-gradient(top,#2f393c,#1c2224);
+  background: -o-linear-gradient(top,#2f393c,#1c2224);
+  background: linear-gradient(to bottom,#2f393c,#1c2224);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f393c',endColorstr='#ff1c2224',GradientType=0);
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.active_admin .sidebar_section > h3 {
+  padding: 15px;
+  color: #cfdde3;
+  font-size: 16px;
+  font-weight: 500;
+  height: 44px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body.active_admin .panel h3 {
+  display: none;
+}
+
+
+
+body.active_admin .attributes_table table th {
+  color: #919191;
 }
 
 // Overriding any non-variable SASS must be done after the fact.
