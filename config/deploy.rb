@@ -67,30 +67,11 @@ namespace :deploy do
     end
   end
 
-
-
-  task :start_unicorn do
-    on roles(:app), in: :sequence, wait: 5 do |host|
-      execute "cd #{release_path} && RAILS_ENV=#{fetch(:stage)} /usr/local/rvm/bin/rvm default do bundle exec unicorn -c #{fetch(:unicorn_config)} -E #{fetch(:stage)} -D"
-    end
-  end
-
-  task :stop_unicorn do
-    on roles(:app), in: :sequence, wait: 5 do |host|
-      execute "#{fetch(:try_sudo)} test -e #{fetch(:unicorn_pid)} && kill `cat #{fetch(:unicorn_pid)}`; true"
-    end
-  end
-
-
   after :publishing, :restart
-  after :publishing, :start_unicorn
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      execute "/etc/init.d/taxibase restart;"
     end
   end
 end
