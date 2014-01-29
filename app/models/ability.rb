@@ -12,6 +12,7 @@ class Ability
       can :view, :fio
       can :view, :address
       can :view, :pasport
+      can :manage, NotCheckedTaxist
       if user.level.number == 0 # Администратоо
         can :manage, :all
         can :check, Taxist
@@ -22,14 +23,12 @@ class Ability
       end
 
       if user.level.number == 1 # Модератор
-        can :manage, NotCheckedTaxist
         can :check, Taxist
       end
 
       if user.level.number == 2 # VIP пользователь
         cannot :view, "Statistic"
         can :read, Taxist
-        can :manage, NotCheckedTaxist
         cannot :check, Taxist
       end
 
