@@ -17,4 +17,8 @@ class SiteParams < ActiveRecord::Base
   def self.site_enabled?
     find_by_key(:site_disabled).try(:value) != "1"
   end
+
+  def self.first_page
+    SiteParams.find_or_create_by_key(:first_page)
+  end
 end

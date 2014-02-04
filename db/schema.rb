@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140124153823) do
+ActiveRecord::Schema.define(:version => 20140204131429) do
 
   create_table "accidents", :force => true do |t|
     t.text     "info"
@@ -77,7 +77,12 @@ ActiveRecord::Schema.define(:version => 20140124153823) do
     t.datetime "updated_at",                             :null => false
     t.integer  "level_id"
     t.string   "strict_password"
-    t.time     "last_active_at"
+    t.datetime "last_active_at"
+    t.string   "name"
+    t.string   "fio"
+    t.string   "first_phone"
+    t.string   "second_phone"
+    t.integer  "views_count",            :default => -1
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -147,9 +152,9 @@ ActiveRecord::Schema.define(:version => 20140124153823) do
     t.string   "third_name"
     t.text     "work_place"
     t.string   "work_post"
-    t.string   "email"
-    t.string   "mobile_phone"
-    t.string   "home_phone"
+    t.string   "third_phone"
+    t.string   "first_phone"
+    t.string   "second_phone"
     t.integer  "taxist_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -181,6 +186,7 @@ ActiveRecord::Schema.define(:version => 20140124153823) do
     t.text     "fssp_info"
     t.date     "birthdate"
     t.integer  "search_count",       :default => 0
+    t.string   "am"
   end
 
 end

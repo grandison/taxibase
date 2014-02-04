@@ -5,7 +5,6 @@ ActiveAdmin.register Taxist do
   filter :first_name
   filter :last_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
   filter :third_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
-  filter :address, :if => ->(user){ current_admin_user.can?(:view, :address)}
   filter :pasport_number, :if => ->(user){ current_admin_user.can?(:view, :pasport)}
   filter :vodit_ustov_number
   filter :pozivnoy
@@ -33,7 +32,9 @@ ActiveAdmin.register Taxist do
   index do
     column :photo do |taxist|
       if taxist.photo.present?
-        image_tag(taxist.photo, style: "max-width:100px;")
+        link_to(taxist.photo.url, class: :fancybox) do
+          image_tag(taxist.photo, style: "max-width:100px;")
+        end
       end
     end
     column :vodit_ustov_number
@@ -93,9 +94,9 @@ ActiveAdmin.register Taxist do
           tr.third_name,
           tr.work_place,
           tr.work_post,
-          tr.home_phone,
-          tr.mobile_phone,
-          tr.email].join(",")
+          tr.first_phone,
+          tr.second_phone,
+          tr.third_phone].join(",")
         end.join("br").html_safe
       end
       row :anketa do |taxist|
@@ -105,9 +106,6 @@ ActiveAdmin.register Taxist do
       end
       row :pozivnoy
       row :fssp_info
-      row :accidents do |taxist|
-        render taxist.accidents
-      end
       row :reputations do |taxist|
         render taxist.reputations
       end
@@ -140,19 +138,16 @@ ActiveAdmin.register Taxist do
         tr.input :third_name
         tr.input :work_place
         tr.input :work_post
-        tr.input :home_phone
-        tr.input :mobile_phone
-        tr.input :email
+        tr.input :first_phone
+        tr.input :second_phone
+        tr.input :third_phone
+      end
+      if current_admin_user.can? :view, :taxist_am
+        f.input :am
       end
       f.input :anketa
       f.input :pozivnoy
       f.input :fssp_info
-      f.has_many :accidents do |ac|
-        ac.input :info
-        ac.has_many :attachments do |at|
-          at.input :file
-        end
-      end
       f.has_many :reputations do |rep|
         rep.input :info
         rep.has_many :attachments do |at|

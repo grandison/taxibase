@@ -34,6 +34,7 @@ group :assets do
 end
 
 gem 'activeadmin', path: "./activeadmin"
+gem 'formtastic', path: "./formtastic"
 gem 'thin'
 gem "jquery-rails", "~> 2.3.0" 
 gem 'rails_on_heroku'
@@ -43,6 +44,7 @@ gem "pry"
 gem "russian"
 gem "unicorn"
 gem "magic_encoding"
+gem 'fancybox2-rails', '~> 0.2.6'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

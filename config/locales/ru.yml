@@ -29,7 +29,7 @@ ru:
     download: "Загрузка:"
     has_many_new: "Добавить %{model}"
     has_many_delete: "Удалить"
-    filter: "Искать"
+    filter: "Поиск"
     clear_filters: "Очистить"
     search_field: "%{field}"
     equal_to: "="
@@ -89,21 +89,21 @@ ru:
         forgot_your_password: "Забыли пароль?"
     page:
       statistic: "Статистика"
-      manage_site: "Управление сайтом"
+      manage_site: "Управление"
   activerecord:
     models:
       taxist:
         one: ""
-        other: Таксисты
+        other: Анкеты
       not_checked_taxist:
         one: ""
-        other: "Непроверенные анкеты"
+        other: "Модерация"
       level:
         one: Уровень доступа
         other: Уровни доступа
       admin_user:
         one: ""
-        other: Пользователи
+        other: Клиенты
       addon:
         one: ""
         other: Комментарии
@@ -145,6 +145,7 @@ ru:
         accidents: Аварии
         reputations: Репутация
         fio: ФИО
+        am: Зарегистрированный автотранспорт
       level:
         number: уровень
         name: название
@@ -153,6 +154,13 @@ ru:
         level: "Уровень доступа"
         email: "Емейл"
         password: "Пароль"
+        name: "Имя"
+        fio: ФИО
+        first_phone: Номер телефона
+        second_phone: Номер телефона
+        views_count: Количество просмотров
+        created_at: Дата регистрации
+        last_active_at: Последнее время захода
       addon:
         text: Текст
       attachment:
@@ -161,6 +169,11 @@ ru:
         first_name: Имя
         last_name: Фамилия
         third_name: Отчество
+        work_place: Место работы
+        work_post: Должность
+        first_phone: Номер телефона
+        second_phone: Номер телефона
+        third_phone: Номер телефона
       accident:
         info: Описание
       reputation:

@@ -61,10 +61,10 @@
       </tr>
     </thead>
     <tbody>
-      <% AdminUser.where("last_active_at > ?", Time.zone.now - 5.minutes).each do |admin_user| %>
+      <% AdminUser.where("last_active_at > ?", Time.now - 5.minutes).each do |admin_user| %>
       <tr class="odd">
         <td>
-          <%= admin_user.email %>
+          <%= admin_user.name %>
         </td>
       </tr>
       <% end %>

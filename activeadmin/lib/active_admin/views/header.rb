@@ -12,6 +12,7 @@ module ActiveAdmin
         build_site_title
         build_global_navigation
         build_utility_navigation
+        render "shared/after_header"
       end
 
 

@@ -13,8 +13,9 @@ class Ability
       can :view, :address
       can :view, :pasport
       can :manage, NotCheckedTaxist
-      if user.level.number == 0 # Администратоо
+      if user.level.number == 0 # Администратор
         can :manage, :all
+        can :view, :taxist_am
         can :check, Taxist
       end
 

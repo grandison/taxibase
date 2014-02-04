@@ -3,7 +3,6 @@ ActiveAdmin.register NotCheckedTaxist do
   filter :first_name
   filter :last_name
   filter :third_name
-  filter :address
   filter :pasport_number
   filter :vodit_ustov_number
   filter :pozivnoy
@@ -30,7 +29,9 @@ ActiveAdmin.register NotCheckedTaxist do
   index do
     column :photo do |taxist|
       if taxist.photo.present?
-        image_tag(taxist.photo, style: "max-width:100px;")
+        link_to(taxist.photo.url, class: :fancybox) do
+          image_tag(taxist.photo, style: "max-width:100px;")
+        end
       end
     end
     column :vodit_ustov_number
@@ -74,9 +75,9 @@ ActiveAdmin.register NotCheckedTaxist do
           tr.third_name,
           tr.work_place,
           tr.work_post,
-          tr.home_phone,
-          tr.mobile_phone,
-          tr.email].join(",")
+          tr.first_phone,
+          tr.second_phone,
+          tr.third_phone].join(",")
         end.join("br").html_safe
       end
       row :anketa do |taxist|
@@ -117,9 +118,12 @@ ActiveAdmin.register NotCheckedTaxist do
         tr.input :third_name
         tr.input :work_place
         tr.input :work_post
-        tr.input :home_phone
-        tr.input :mobile_phone
-        tr.input :email
+        tr.input :first_phone
+        tr.input :second_phone
+        tr.input :third_phone
+      end
+      if current_admin_user.can? :view, :taxist_am
+        f.input :am
       end
       f.input :anketa
       f.input :pozivnoy

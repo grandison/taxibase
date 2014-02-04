@@ -17,8 +17,6 @@
 
 @mixin section-background {
   background: #f4f4f4;
-  @include rounded(4px);
-  @include inset-shadow(0,1px,4px, #ddd);
 }
 
 @mixin section {
@@ -26,7 +24,7 @@
   margin-bottom: 20px;
   
   
-  > div { padding: 3px $section-padding $section-padding $section-padding; }
+  > div { padding: 15px $section-padding $section-padding $section-padding; }
   
   hr {
     border: none;

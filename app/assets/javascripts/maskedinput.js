@@ -22,8 +22,8 @@ $.mask = {
   //Predefined character definitions
   definitions: {
     '9': "[0-9]",
-    'a': "[A-Za-z]",
-    '*': "[A-Za-z0-9]"
+    'a': "[A-Za-zа-ЯА-Я]",
+    '*': "[A-Zа-яА-Яa-z0-9]"
   },
   dataName: "rawMaskFn",
   placeholder: '_',
