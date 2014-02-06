@@ -21,4 +21,8 @@ class SiteParams < ActiveRecord::Base
   def self.first_page
     SiteParams.find_or_create_by_key(:first_page)
   end
+
+  def self.regulations
+    SiteParams.find_or_create_by_key(:regulations)
+  end
 end

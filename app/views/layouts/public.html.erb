@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+ 
+  <title></title>
+
+  <% ActiveAdmin.application.stylesheets.each do |style| %>
+    <%= stylesheet_link_tag style.path, style.options.dup %>
+  <% end %>
+  <% ActiveAdmin.application.javascripts.each do |path| %>
+    <%= javascript_include_tag path %>
+  <% end %>
+
+  <%= csrf_meta_tag %>
+</head>
+<body class="active_admin logged_out <%= controller.action_name %>">
+<div id="wrapper">
+
+  <div id="content_wrapper">
+    <div id="active_admin_content">
+      <img src="/images/logo_black.jpg">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <%= yield :footer %>
+  </div>
+</div>
+</body>
+</html>

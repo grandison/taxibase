@@ -7,7 +7,7 @@ module ActiveAdmin
       config = {
         :path => ActiveAdmin.application.default_namespace,
         :controllers => ActiveAdmin::Devise.controllers,
-        :path_names => { :sign_in => 'login', :sign_out => "logout" }
+        :path_names => { :sign_in => 'login', :sign_out => "logout", :sign_up => "registration" }
       }
 
       if ::Devise.respond_to?(:sign_out_via)
@@ -22,7 +22,8 @@ module ActiveAdmin
       {
         :sessions => "active_admin/devise/sessions",
         :passwords => "active_admin/devise/passwords",
-        :unlocks => "active_admin/devise/unlocks"
+        :unlocks => "active_admin/devise/unlocks",
+        :registrations => "active_admin/devise/registrations"
       }
     end
 
@@ -55,6 +56,10 @@ module ActiveAdmin
     end
 
     class SessionsController < ::Devise::SessionsController
+      include ::ActiveAdmin::Devise::Controller
+    end
+
+    class RegistrationsController < ::Devise::RegistrationsController
       include ::ActiveAdmin::Devise::Controller
     end
 

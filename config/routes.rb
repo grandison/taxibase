@@ -1,5 +1,9 @@
 # -*- encoding : utf-8 -*-
 Taxibase::Application.routes.draw do
+  get "public/regulations"
+
+  get "public/contacts"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

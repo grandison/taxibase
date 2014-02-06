@@ -15,6 +15,16 @@ PATH
       sass (>= 3.1.0)
 
 PATH
+  remote: ./devise
+  specs:
+    devise (3.2.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
+PATH
   remote: ./formtastic
   specs:
     formtastic (2.2.1)
@@ -86,12 +96,6 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
-    devise (3.2.2)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -229,6 +233,7 @@ DEPENDENCIES
   capistrano-rvm
   carrierwave
   coffee-rails (~> 3.2.1)
+  devise!
   fancybox2-rails (~> 0.2.6)
   formtastic!
   jquery-rails (~> 2.3.0)

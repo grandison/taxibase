@@ -10,7 +10,7 @@ ru:
       message: "Доступ запрещен!"
     dashboard: Информация
     dashboard_welcome:
-      welcome: "Здесь будет информация о проекте"
+      welcome: "Добро пожаловать!"
       call_to_action: ""
     view: "Открыть"
     edit: "Изменить"
@@ -86,6 +86,7 @@ ru:
         submit: "Изменение пароля"
       links:
         sign_in: "Войти"
+        sign_up: "Регистрация"
         forgot_your_password: "Забыли пароль?"
     page:
       statistic: "Статистика"
@@ -122,6 +123,9 @@ ru:
       pasport_scan:
         one: ""
         other: Сканы паспорта
+      site_params:
+        one: ""
+        other: Параметры сайта
     attributes:
       taxist: 
         first_name: Имя
@@ -180,6 +184,9 @@ ru:
         info: Текст
       pasport_scan:
         file: Файл
+      site_params:
+        key: Параметр
+        value: Значение
     errors:
       models:
         taxist:

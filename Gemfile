@@ -35,6 +35,7 @@ end
 
 gem 'activeadmin', path: "./activeadmin"
 gem 'formtastic', path: "./formtastic"
+gem 'devise', path: "./devise"
 gem 'thin'
 gem "jquery-rails", "~> 2.3.0" 
 gem 'rails_on_heroku'

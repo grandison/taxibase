@@ -27,6 +27,11 @@ ActiveAdmin.register Taxist do
         format.html
       end
     end
+
+    def show
+      current_admin_user.reduce_views_count
+      show!
+    end
   end
 
   index do
@@ -82,26 +87,32 @@ ActiveAdmin.register Taxist do
       end
       row :vodit_ustov_number
       row :vodit_ustov_date
-      row :vodit_ustov_file do |taxist|
-        if taxist.vodit_ustov_file.present?
-          image_tag(taxist.vodit_ustov_file, style: "max-width:100px;")
+      if current_admin_user.can?(:view, :vodit_ustov_file)
+        row :vodit_ustov_file do |taxist|
+          if taxist.vodit_ustov_file.present?
+            image_tag(taxist.vodit_ustov_file, style: "max-width:100px;")
+          end
         end
       end
-      row :taxist_relatives do |taxist|
-        taxist.taxist_relatives.map do |tr|
-          [tr.first_name,
-          tr.last_name,
-          tr.third_name,
-          tr.work_place,
-          tr.work_post,
-          tr.first_phone,
-          tr.second_phone,
-          tr.third_phone].join(",")
-        end.join("br").html_safe
+      if current_admin_user.can?(:view, :taxist_relatives)
+        row :taxist_relatives do |taxist|
+          taxist.taxist_relatives.map do |tr|
+            [tr.first_name,
+            tr.last_name,
+            tr.third_name,
+            tr.work_place,
+            tr.work_post,
+            tr.first_phone,
+            tr.second_phone,
+            tr.third_phone].join(",")
+          end.join("br").html_safe
+        end
       end
-      row :anketa do |taxist|
-        if taxist.anketa.present?
-          image_tag(taxist.anketa, style: "max-width:100px;")
+      if current_admin_user.can?(:view, :anketa)
+        row :anketa do |taxist|
+          if taxist.anketa.present?
+            image_tag(taxist.anketa, style: "max-width:100px;")
+          end
         end
       end
       row :pozivnoy

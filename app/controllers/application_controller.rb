@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def access_denied(exception)
-    if current_user.can? :view, Taxist
+    if current_user.can? :read, Taxist
       redirect_to dashboard_path, :alert => exception.message
     else
       redirect_to not_checked_taxists_path

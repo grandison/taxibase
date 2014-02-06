@@ -12,5 +12,4 @@ $(function(){
   $("input").attr('autocomplete', 'off');  
 
   $("a.fancybox").fancybox();
-
 });

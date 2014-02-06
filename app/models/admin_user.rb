@@ -3,7 +3,7 @@ class AdminUser < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, 
-         :recoverable, :rememberable, :trackable
+         :recoverable, :rememberable, :trackable, :registerable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :level_id, :strict_password, :user_id, :name
@@ -30,6 +30,13 @@ class AdminUser < ActiveRecord::Base
       NotCheckedTaxist.not_checked
     else
       NotCheckedTaxist.not_checked.where("user_id = ?", self.id)
+    end
+  end
+
+  def reduce_views_count
+    if self.views_count > 0
+      self.views_count -= 1
+      self.save
     end
   end
 
