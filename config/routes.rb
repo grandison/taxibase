@@ -6,7 +6,9 @@ Taxibase::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :questions, only: [:create]
+  namespace :public do
+    resources :questions, only: [:create]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
