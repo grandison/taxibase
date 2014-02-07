@@ -4,6 +4,6 @@
   <%= link_to "Включить сайт", manage_site_enable_site_path, :method => :post %>
 <% end %>
 <br>
-<%= link_to "Редактировать входную страницу", edit_site_param_path(SiteParams.first_page) %>
-<br>
 <%= link_to "Редактировать правила", edit_site_param_path(SiteParams.regulations) %>
+<br>
+<%= link_to "Вопросы пользователей", questions_path %>

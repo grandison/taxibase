@@ -46,6 +46,7 @@ gem "russian"
 gem "unicorn"
 gem "magic_encoding"
 gem 'fancybox2-rails', '~> 0.2.6'
+gem 'tinymce-rails', '~> 3.5.8.3'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,2 +1,15 @@
-<h1>Public#contacts</h1>
-<p>Find me in app/views/public/contacts.html.erb</p>
+<% if @question.new_record? %>
+  <%= semantic_form_for @question do |f| %>
+    <%= f.inputs :name => "inputs" do %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :phone %>
+      <%= f.input :text %>
+    <% end %>
+    <%= f.actions do %>
+      <%= f.action :submit, label: "Отправить вопрос" %>
+    <% end %>
+  <% end %>
+<% else %>
+  <h1>Ваш вопрос отправлен</h1>
+<% end %>

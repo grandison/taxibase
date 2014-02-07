@@ -129,7 +129,11 @@ body.active_admin form input[type=submit]:not(.disabled):hover {
 }
 
 body.active_admin.logged_out #login a {
-  margin-top: -40px;
+  margin-left:10px;
+}
+
+#public-links {
+  text-align:center;
 }
 
 body.active_admin #header #utility_nav {
@@ -241,7 +245,7 @@ input, textarea {
 }
 
 body.active_admin.logged_out #content_wrapper #active_admin_content {
-  width: 454px;
+  width: 100%;
 }
 
 body.active_admin a, body.active_admin a:link, body.active_admin a:visited {

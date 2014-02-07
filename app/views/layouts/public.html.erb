@@ -19,8 +19,11 @@
 
   <div id="content_wrapper">
     <div id="active_admin_content">
+      <div id="login">
       <img src="/images/logo_black.jpg">
       <%= yield %>
+      <%= render :partial => "active_admin/devise/shared/links" %>
+      </div>
     </div>
   </div>
   <div id="footer">

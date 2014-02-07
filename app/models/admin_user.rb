@@ -6,10 +6,15 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :registerable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :level_id, :strict_password, :user_id, :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :level_id, :strict_password, :user_id, :first_phone, :second_phone, :third_phone, :scan_ogrn, :organization, :fio, :views_count
   # attr_accessible :title, :body
   belongs_to :level
   has_many :taxists
+
+  validates :fio, :email, :first_phone, presence: true
+  validates :scan_ogrn, presence: true, if: ->(admin_user){admin_user.organization.blank?}
+
+  mount_uploader :scan_ogrn, PhotoUploader
 
   def ability
     @ability ||= Ability.new(self)

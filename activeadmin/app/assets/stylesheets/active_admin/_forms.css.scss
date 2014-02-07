@@ -82,16 +82,11 @@ form {
 
   /* Text Fields */
   input[type=text], input[type=password], input[type=email], input[type=number], input[type=url], input[type=tel], textarea {
-    width: 76%;
+    width: 70%;
     @include rounded;
     @include sans-family;
     outline: none;
     padding: 8px $text-input-horizontal-padding 7px;
-    
-    &:focus {
-      border: 1px solid #99a2aa;
-      @include shadow(0,0,4px,#99a2aa);
-    }
   }
 
   fieldset > ol > li {

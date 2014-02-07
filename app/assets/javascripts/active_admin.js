@@ -1,6 +1,15 @@
 //= require active_admin/base
 //= require fancybox
 //= require maskedinput
+//= require tinymce
+ 
+$(document).ready(function() {
+  tinyMCE.init({
+     mode : "specific_textareas",
+     editor_selector : "tinymce_editor",
+     theme: 'advanced'
+   });
+});
 
 $(function(){
   $("#taxist_pasport_number").mask("(9999)999999");

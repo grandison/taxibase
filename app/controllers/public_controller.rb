@@ -4,5 +4,6 @@ class PublicController < ApplicationController
   end
 
   def contacts
+    @question = Question.new
   end
 end

@@ -1,3 +1,10 @@
+<style type="text/css">
+  body.active_admin.logged_out #content_wrapper, body.active_admin.logged_out #content_wrapper #active_admin_content {
+    width: 800px;
+  }
+
+</style>
+
 <div id="login">
 
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -5,23 +12,43 @@
 
     <fieldset class="inputs">
       <ol>
-        <li class="email input optional autofocus stringish">
-          <%= f.label :email %>
-          <%= f.email_field :email, :autofocus => true %>
-        </li>
-        <li class="password input optional stringish">
-          <%= f.label :password %>
-          <%= f.password_field :password %>
+        <li>
+          <%= f.label :organization %>
+          <%= f.text_field :organization %>
         </li>
         <li>
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation %>
+          <%= f.label :fio %>
+          <%= f.text_field :fio, :autofocus => true %>
+        </li>
+        <li>
+          <%= f.label :first_phone %>
+          <%= f.text_field :first_phone %>
+        </li>
+        <li>
+          <%= f.label :second_phone %>
+          <%= f.text_field :second_phone %>
+        </li>
+        <li>
+          <%= f.label :third_phone %>
+          <%= f.text_field :third_phone %>
+        </li>
+        <li class="email input optional autofocus stringish">
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </li>
+        <li>
+          <%= f.label :scan_ogrn %>
+          <%= f.file_field :scan_ogrn %>
+        </li>
+        <li class="password input optional stringish">
+          <%= f.label :strict_password %>
+          <%= f.password_field :password %>
         </li>
       </ol>
     </fieldset>
     <fieldset class="actions">
       <ol><li class="action input_action " id="admin_user_submit_action">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Зарегистрироваться" %>
       </li></ol>
     </fieldset>
   <% end %>

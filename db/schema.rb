@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140204131429) do
+ActiveRecord::Schema.define(:version => 20140207120041) do
 
   create_table "accidents", :force => true do |t|
     t.text     "info"
@@ -83,6 +83,9 @@ ActiveRecord::Schema.define(:version => 20140204131429) do
     t.string   "first_phone"
     t.string   "second_phone"
     t.integer  "views_count",            :default => -1
+    t.string   "organization"
+    t.string   "third_phone"
+    t.string   "scan_ogrn"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -125,11 +128,33 @@ ActiveRecord::Schema.define(:version => 20140204131429) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "questions", :force => true do |t|
+    t.string   "email"
+    t.string   "phone"
+    t.string   "name"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reputations", :force => true do |t|
     t.text     "info"
     t.integer  "taxist_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "rich_rich_files", :force => true do |t|
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "rich_file_file_name"
+    t.string   "rich_file_content_type"
+    t.integer  "rich_file_file_size"
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+    t.string   "simplified_type",        :default => "file"
   end
 
   create_table "site_params", :force => true do |t|

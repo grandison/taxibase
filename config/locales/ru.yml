@@ -96,6 +96,9 @@ ru:
       taxist:
         one: ""
         other: Анкеты
+      question:
+        one: ""
+        other: Вопросы
       not_checked_taxist:
         one: ""
         other: "Модерация"
@@ -157,11 +160,15 @@ ru:
         strict_password: "Пароль"
         level: "Уровень доступа"
         email: "Емейл"
+        organization: "Организация"
         password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
         name: "Имя"
-        fio: ФИО
+        fio: ФИО руководителя
         first_phone: Номер телефона
         second_phone: Номер телефона
+        third_phone: Номер телефона
+        scan_ogrn: скан ОГРН/ОГРНИП
         views_count: Количество просмотров
         created_at: Дата регистрации
         last_active_at: Последнее время захода
@@ -187,6 +194,11 @@ ru:
       site_params:
         key: Параметр
         value: Значение
+      question:
+        name: Ваше имя
+        email: Емейл
+        phone: Номер телефона
+        text: Текст вопроса
     errors:
       models:
         taxist:

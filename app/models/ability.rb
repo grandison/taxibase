@@ -4,8 +4,8 @@ class Ability
 
   def initialize(user)
     user ||= AdminUser.new
+    can :read, ActiveAdmin::Page, :name => "Dashboard"
     if user.level
-      can :read, ActiveAdmin::Page, :name => "Dashboard"
       can :read, ActiveAdmin::Page, :name => "TrialEnd"
       cannot :read, ActiveAdmin::Page, :name => "Regulations"
       cannot :read, ActiveAdmin::Page, :name => "Contacts"

@@ -17,9 +17,13 @@ class ApplicationController < ActionController::Base
 
   def access_denied(exception)
     if current_user.can? :read, Taxist
-      redirect_to dashboard_path, :alert => exception.message
+      redirect_to taxists_path, :alert => exception.message
     else
-      redirect_to not_checked_taxists_path
+      if current_user.can? :read, NotCheckedTaxist
+        redirect_to not_checked_taxists_path
+      else
+        redirect_to dashboard_path, :alert => exception.message
+      end
     end
   end
 
