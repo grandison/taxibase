@@ -12,8 +12,10 @@ class AdminUser < ActiveRecord::Base
   has_many :taxists
 
   validates :fio, :email, :first_phone, :strict_password, presence: true
-  validates :scan_ogrn, presence: true, if: ->(admin_user){admin_user.organization.blank?}
+  validates :scan_ogrn, presence: true, if: ->(admin_user){admin_user.organization.present?}
   validates :email, uniqueness: true
+  validates :email, presence: true, unless: :first_phone?
+  validates :first_phone, presence: true, unless: :email?
 
   mount_uploader :scan_ogrn, PhotoUploader
 
@@ -49,6 +51,8 @@ class AdminUser < ActiveRecord::Base
   private
 
   def set_strict_password
-  	self.password = strict_password
+    if strict_password_changed?
+    	self.password = strict_password
+    end
   end
 end

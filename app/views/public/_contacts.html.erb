@@ -1,4 +1,5 @@
-<%= semantic_form_for [:public, Question.new] do |f| %>
+<% model = @question || Question.new %>
+<%= semantic_form_for [:public, model] do |f| %>
   <%= f.inputs :name => "inputs" do %>
     <%= f.input :name %>
     <%= f.input :email %>

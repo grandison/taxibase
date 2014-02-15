@@ -13,7 +13,7 @@ class Devise::SessionsController < DeviseController
 
   # POST /resource/sign_in
   def create
-    if AdminUser.find_by_email(params[:admin_user][:email]).active
+    if params[:admin_user][:email].blank? || AdminUser.find_by_email(params[:admin_user][:email]).active
       self.resource = warden.authenticate!(auth_options)
       set_flash_message(:notice, :signed_in) if is_flashing_format?
       sign_in(resource_name, resource)
