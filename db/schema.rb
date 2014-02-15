@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140207120041) do
+ActiveRecord::Schema.define(:version => 20140214194622) do
 
   create_table "accidents", :force => true do |t|
     t.text     "info"
@@ -63,18 +63,18 @@ ActiveRecord::Schema.define(:version => 20140207120041) do
   end
 
   create_table "admin_users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.integer  "sign_in_count",          :default => 0,     :null => false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.integer  "level_id"
     t.string   "strict_password"
     t.datetime "last_active_at"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20140207120041) do
     t.string   "organization"
     t.string   "third_phone"
     t.string   "scan_ogrn"
+    t.boolean  "active",                 :default => false
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -112,6 +113,13 @@ ActiveRecord::Schema.define(:version => 20140207120041) do
     t.datetime "updated_at",          :null => false
     t.integer  "attachmentable_id"
     t.string   "attachmentable_type"
+  end
+
+  create_table "autos", :force => true do |t|
+    t.integer  "taxist_id"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "levels", :force => true do |t|

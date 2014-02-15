@@ -21,4 +21,16 @@ $(function(){
   $("input").attr('autocomplete', 'off');  
 
   $("a.fancybox").fancybox();
+
+  if ($("#admin_user_views_count").val() == "-1") {
+    $("#unlimit-views").attr('checked','checked');
+  }
+    
+  $("#unlimit-views").click(function(){
+    if ($(this).is(':checked')) {
+      $("#admin_user_views_count").val("-1");
+    } else {
+      $("#admin_user_views_count").val("0");
+    }
+  });
 });

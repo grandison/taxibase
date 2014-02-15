@@ -26,12 +26,14 @@ ActiveAdmin.register NotCheckedTaxist do
     link_to('Пометить как проверенного!', check_not_checked_taxist_path(not_checked_taxist), method: :put)
   end
 
-  index do
+  index :download_links => false do
     column :photo do |taxist|
       if taxist.photo.present?
-        link_to(taxist.photo.url, class: :fancybox) do
-          image_tag(taxist.photo, style: "max-width:100px;")
-        end
+        taxist.pasport_scans.map do |ps|
+          link_to(ps.file.url, class: :fancybox) do
+            image_tag("/images/photo.png", style: "max-width:30px;")
+          end
+        end.join("<br>").html_safe
       end
     end
     column :vodit_ustov_number
@@ -87,9 +89,6 @@ ActiveAdmin.register NotCheckedTaxist do
       end
       row :pozivnoy
       row :fssp_info
-      row :accidents do |taxist|
-        render taxist.accidents
-      end
       row :reputations do |taxist|
         render taxist.reputations
       end
@@ -128,12 +127,6 @@ ActiveAdmin.register NotCheckedTaxist do
       f.input :anketa
       f.input :pozivnoy
       f.input :fssp_info
-      f.has_many :accidents do |ac|
-        ac.input :info
-        ac.has_many :attachments do |at|
-          at.input :file
-        end
-      end
       f.has_many :reputations do |rep|
         rep.input :info
         rep.has_many :attachments do |at|

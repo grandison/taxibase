@@ -64,6 +64,10 @@ GEM
       activesupport (>= 3.0.0)
     arel (3.0.3)
     atomic (1.1.14)
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
     bcrypt-ruby (3.1.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
@@ -87,6 +91,7 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    chronic (0.10.2)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -106,6 +111,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    htmlentities (4.3.1)
     i18n (0.6.9)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
@@ -131,11 +137,14 @@ GEM
       polyamorous (~> 0.5.0)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     multi_json (1.8.2)
     mysql2 (0.3.14)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -177,6 +186,7 @@ GEM
       json (~> 1.4)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rubyzip (1.0.0)
     russian (0.6.0)
       i18n (>= 0.5.0)
     sass (3.2.13)
@@ -209,6 +219,11 @@ GEM
     tins (0.13.1)
     tinymce-rails (3.5.8.3)
       railties (>= 3.1.1)
+    to_spreadsheet (1.0.4)
+      axlsx
+      chronic
+      nokogiri
+      rails
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -249,5 +264,6 @@ DEPENDENCIES
   sextant
   thin
   tinymce-rails (~> 3.5.8.3)
+  to_spreadsheet
   uglifier (>= 1.0.3)
   unicorn

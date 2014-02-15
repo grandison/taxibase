@@ -1,0 +1,45 @@
+<table border="0" cellspacing="0" cellpadding="0" id="index_table_admin_users" class="index_table index" paginator="true">
+  <caption>Что находят пользователи</caption>
+  <thead>
+    <tr>
+      <th>Что находят пользователи</th>
+      <th>Сколько раз</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Taxist.where("search_count > 0").order("search_count DESC").each do |taxist|  %>
+    <tr class="odd">
+      <td>
+        <%= link_to(taxist.fio, taxist) %>
+      </td>
+      <td>
+        <%= taxist.search_count %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" id="index_table_admin_users" class="index_table index" paginator="true">
+  <caption>Что не находят пользователи</caption>
+  <thead>
+    <tr>
+      <th>Что не находят пользователи</th>
+      <th>Сколько раз</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% TaxistSearch.group(:search).count.each do |search, count|  %>
+    <tr class="odd">
+      <td>
+        <%= pretty_taxist_search(YAML::load(search)) %>
+      </td>
+      <td>
+        <%= count %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

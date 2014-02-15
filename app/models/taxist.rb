@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Taxist < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :third_name, :address, :vodit_ustov_number, :pozivnoy, :fssp_info, :accidents_attributes, :user_id, :vodit_ustov_date, :vodit_ustov_file, :taxist_relatives_attributes, :reputations_attributes, :pasport_scans_attributes, :birthdate, :pasport_number, :pasport_info, :anketa, :photo, :am
+  attr_accessible :first_name, :last_name, :third_name, :address, :vodit_ustov_number, :pozivnoy, :fssp_info, :accidents_attributes, :user_id, :vodit_ustov_date, :vodit_ustov_file, :taxist_relatives_attributes, :reputations_attributes, :pasport_scans_attributes, :birthdate, :pasport_number, :pasport_info, :anketa, :photo, :am, :autos_attributes
   mount_uploader :photo, PhotoUploader
   mount_uploader :vodit_ustov_file, PhotoUploader
   mount_uploader :anketa, PhotoUploader
@@ -15,7 +15,8 @@ class Taxist < ActiveRecord::Base
   has_many :accidents
   has_many :reputations
   has_many :pasport_scans
-  accepts_nested_attributes_for :addons, :taxist_relatives, :accidents, :reputations, :pasport_scans
+  has_many :autos
+  accepts_nested_attributes_for :addons, :taxist_relatives, :accidents, :reputations, :pasport_scans, :autos
 
   before_save :downcase_fields
 

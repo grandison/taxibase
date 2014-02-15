@@ -129,6 +129,9 @@ ru:
       site_params:
         one: ""
         other: Параметры сайта
+      auto:
+        one: ""
+        other: Зарегистрированный автотранспорт
     attributes:
       taxist: 
         first_name: Имя
@@ -156,6 +159,8 @@ ru:
       level:
         number: уровень
         name: название
+      auto:
+        description: Описание
       admin_user:
         strict_password: "Пароль"
         level: "Уровень доступа"

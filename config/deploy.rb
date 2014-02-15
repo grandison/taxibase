@@ -79,9 +79,7 @@ namespace :deploy do
     end
   end
 
-
-  after :publishing, :restart
-  after :publishing, :stop_unicorn
+  before 'deploy:assets:precompile', :stop_unicorn
   after :publishing, :start_unicorn
 
   after :restart, :clear_cache do

@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 ActiveAdmin.register AdminUser do     
   config.filters = false
-  index do                            
+  index :download_links => false do                            
     column :organization
     column :fio
     column :level                  
@@ -45,7 +45,7 @@ ActiveAdmin.register AdminUser do
       f.input :second_phone
       f.input :third_phone
       f.input :scan_ogrn
-      f.input :views_count, hint: "-1 - неограниченное количество", min: -1
+      f.input :views_count, hint: "<input type='checkbox' id='unlimit-views'> Неограниченное количество".html_safe, min: 0
     end                               
     f.actions                         
   end                                 

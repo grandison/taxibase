@@ -13,6 +13,12 @@ ActiveAdmin.register Taxist do
 
   scope_to :current_admin_user, :association_method => :checked_taxists
 
+  collection_action :queries_stats do
+    respond_to do |format|
+      format.xlsx { render xlsx: :queries_stats, filename: "stats" }
+    end
+  end
+
   controller do 
     def index
       index! do |format|
@@ -34,11 +40,11 @@ ActiveAdmin.register Taxist do
     end
   end
 
-  index do
+  index :download_links => false do
     column :photo do |taxist|
       if taxist.photo.present?
         link_to(taxist.photo.url, class: :fancybox) do
-          image_tag(taxist.photo, style: "max-width:100px;")
+          image_tag("/images/photo.png", style: "max-width:30px;")
         end
       end
     end
@@ -79,8 +85,8 @@ ActiveAdmin.register Taxist do
         row :pasport_info
         row :pasport_scans do |taxist|
           taxist.pasport_scans.map do |ps|
-            if ps.file.present?
-              image_tag(ps.file, style: "max-width:100px;")
+            link_to(ps.file.url, class: :fancybox) do
+              image_tag("/images/photo.png", style: "max-width:30px;")
             end
           end.join("<br>").html_safe
         end
@@ -123,6 +129,11 @@ ActiveAdmin.register Taxist do
       row :addons do |taxist|
         render taxist.addons
       end
+      row :autos do |taxist|
+        taxist.autos.map do |tr|
+          tr.description
+        end.join("br").html_safe
+      end
     end
     render "addons/form"
   end
@@ -154,7 +165,9 @@ ActiveAdmin.register Taxist do
         tr.input :third_phone
       end
       if current_admin_user.can? :view, :taxist_am
-        f.input :am
+        f.has_many :autos do |auto|
+          auto.input :description
+        end
       end
       f.input :anketa
       f.input :pozivnoy

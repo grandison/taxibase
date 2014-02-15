@@ -11,8 +11,9 @@ class AdminUser < ActiveRecord::Base
   belongs_to :level
   has_many :taxists
 
-  validates :fio, :email, :first_phone, presence: true
+  validates :fio, :email, :first_phone, :strict_password, presence: true
   validates :scan_ogrn, presence: true, if: ->(admin_user){admin_user.organization.blank?}
+  validates :email, uniqueness: true
 
   mount_uploader :scan_ogrn, PhotoUploader
 

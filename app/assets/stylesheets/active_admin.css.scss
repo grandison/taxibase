@@ -181,7 +181,7 @@ body.active_admin ul {
       color: #cfdde3;
       font-size: 2em;
       line-height: 30px;
-      font-weight: 300;
+      font-weight: 100;
       float: left;
       padding: 0 30px;
       border-left: 1px solid #2d4149;
@@ -386,11 +386,18 @@ body.active_admin .attributes_table table th {
 }
 
 #head-actions {
-    font-size: 1.1em;
-    text-transform: uppercase;
-    background: #0d0d0d;
-    width: 100%;
-    overflow: hidden
+  font-size: 1.1em;
+  text-transform: uppercase;
+  background: #0d0d0d;
+  width: 100%;
+  overflow: hidden;
+  .header-info {
+    display: inline;
+    margin: 5px 12px 5px 20px;
+    color: #919191;
+    font-size: 12px;
+    float: left;
+  }
 }
 
 #head-actions ul {
@@ -398,7 +405,7 @@ body.active_admin .attributes_table table th {
 }
 
 #head-actions li {
-    margin: 11px 12px 11px 0;
+    margin: 5px 12px 5px 0;
     padding-left: 12px;
     float: left;
     border-left: 1px solid #3c3e3f
