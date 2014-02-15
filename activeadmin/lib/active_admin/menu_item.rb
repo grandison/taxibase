@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/view_helpers/method_or_proc_helper'
 
 module ActiveAdmin

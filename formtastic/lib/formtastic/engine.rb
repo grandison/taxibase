@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Formtastic
   # Required for formtastic.css to be discoverable in the asset pipeline
   # @private

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   module Dashboards
     class Section

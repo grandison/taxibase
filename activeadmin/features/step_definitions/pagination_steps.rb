@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should not see pagination$/ do
   page.should_not have_css(".pagination")
 end

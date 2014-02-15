@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   class Engine < Rails::Engine
     if Rails.version > "3.1"

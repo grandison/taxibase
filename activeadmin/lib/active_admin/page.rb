@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   # Page is the primary data storage for page configuration in Active Admin
   #

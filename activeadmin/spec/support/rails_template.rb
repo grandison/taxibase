@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Rails template to build the sample app for specs
 
 # Create a cucumber database and environment

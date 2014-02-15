@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Detects the current version of Rails that is being used
 #
 #

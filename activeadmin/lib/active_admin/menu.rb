@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
 
   # Each Namespace builds up it's own menu as the global navigation

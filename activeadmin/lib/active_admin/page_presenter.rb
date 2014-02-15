@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
 
   # A simple object that gets used to present different aspects of views

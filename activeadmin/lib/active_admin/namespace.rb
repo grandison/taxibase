@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/helpers/settings'
 require 'active_admin/resource_collection'
 

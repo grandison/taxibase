@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.before_load do |app|
   require "active_admin/batch_actions/resource_extension"
   require "active_admin/batch_actions/controller"

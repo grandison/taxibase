@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPhonesToTaxistsRelatives < ActiveRecord::Migration
   def change
     rename_column :taxist_relatives, :mobile_phone, :first_phone

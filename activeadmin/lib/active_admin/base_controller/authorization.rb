@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
 
   # Exception class to raise when there is an authorized access

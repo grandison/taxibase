@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see the attribute "([^"]*)" with "([^"]*)"$/ do |title, value|
   page.should have_css('.attributes_table th', :text => title)
   page.should have_css('.attributes_table td', :text => value)

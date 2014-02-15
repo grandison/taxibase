@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Formtastic
   module Helpers
     # ActionsHelper encapsulates the responsibilties of the {#actions} DSL for acting on 

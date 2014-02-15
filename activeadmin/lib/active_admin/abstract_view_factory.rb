@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   class AbstractViewFactory
     @@default_views = {}

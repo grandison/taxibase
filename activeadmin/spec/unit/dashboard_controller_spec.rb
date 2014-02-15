@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'spec_helper' 
 
 require 'active_admin/dashboards/dashboard_controller'

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateAutos < ActiveRecord::Migration
   def change
     create_table :autos do |t|

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require File.expand_path('config/environments/cucumber', Rails.root)
 
 Rails.application.class.configure do

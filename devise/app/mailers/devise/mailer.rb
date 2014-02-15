@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 if defined?(ActionMailer)
   class Devise::Mailer < Devise.parent_mailer.constantize
     include Devise::Mailers::Helpers

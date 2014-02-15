@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   class BaseController < ::InheritedResources::Base
     module Menu

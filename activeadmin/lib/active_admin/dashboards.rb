@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/dashboards/dashboard_controller'
 require 'active_admin/dashboards/section'
 

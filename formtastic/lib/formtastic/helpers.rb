@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Formtastic
   module Helpers
     autoload :ButtonsHelper, 'formtastic/helpers/buttons_helper'

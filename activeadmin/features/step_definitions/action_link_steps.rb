@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see a member link to "([^"]*)"$/ do |name|
   page.should have_css("a.member_link", :text => name)
 end

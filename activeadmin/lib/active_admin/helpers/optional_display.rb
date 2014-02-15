@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
 
   # Shareable module to give a #display_on?(action) method

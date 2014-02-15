@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see the scope "([^"]*)"$/ do |name|
   step %{I should see "#{name}" within ".scopes"}
 end

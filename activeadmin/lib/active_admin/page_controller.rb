@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
 
   # All Pages controllers inherit from this controller.

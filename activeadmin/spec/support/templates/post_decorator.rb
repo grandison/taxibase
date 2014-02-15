@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Minimal example of a decorator
 require_dependency 'post'
 

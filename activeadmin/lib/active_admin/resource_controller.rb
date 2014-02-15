@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'inherited_resources'
 require 'active_admin/resource_controller/actions'
 require 'active_admin/resource_controller/action_builder'

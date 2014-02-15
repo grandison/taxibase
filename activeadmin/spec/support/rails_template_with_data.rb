@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Use the default
 apply File.expand_path("../rails_template.rb", __FILE__)
 

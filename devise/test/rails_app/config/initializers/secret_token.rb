@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 config = Rails.application.config
 
 if Devise.rails4?

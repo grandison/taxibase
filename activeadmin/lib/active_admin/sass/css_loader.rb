@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'sass/importers'
 
 # This monkey patches the SASS filesystem importer to work with files

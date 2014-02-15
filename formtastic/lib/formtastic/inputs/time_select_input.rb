@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Formtastic
   module Inputs
     # Outputs a series of select boxes for the fragments that make up a time (hour, minute, second).

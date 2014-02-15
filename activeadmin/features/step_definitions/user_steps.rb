@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Given /^I am logged out$/ do
   if page.all(:css, "a", :text => "Logout").size > 0
     click_link "Logout"

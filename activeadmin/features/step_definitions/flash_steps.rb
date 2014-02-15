@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see a flash with "([^"]*)"$/ do |text|
   page.should have_content(text)
 end

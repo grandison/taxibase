@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/views'
 require 'active_admin/views/components/panel'
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see a select filter for "([^"]*)"$/ do |label|
   page.should have_css(".filter_select label", :text => label)
 end

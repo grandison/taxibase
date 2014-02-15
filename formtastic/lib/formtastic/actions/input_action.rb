@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Outputs an `<input type="submit">` or `<input type="reset">` wrapped in the standard `<li>` 
 # wrapper. This the default for `:submit` and `:reset` actions, but `:as => :button` is also 
 # available as an alternative.

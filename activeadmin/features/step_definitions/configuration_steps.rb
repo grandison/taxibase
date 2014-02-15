@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdminReloading
 
   def load_active_admin_configuration(configuration_content)

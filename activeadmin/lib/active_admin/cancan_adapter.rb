@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'cancan'
 
 # Add a setting to the application to configure the ability

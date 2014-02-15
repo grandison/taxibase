@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'kaminari/models/active_record_extension'
 
 module ActiveAdmin

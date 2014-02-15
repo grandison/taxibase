@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see a table header with "([^"]*)"$/ do |content|
   page.should have_xpath('//th', :text => content)
 end

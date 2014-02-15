@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'test_helper'
 
 ExpectedRoutingError = Devise.rails4? ? MiniTest::Assertion : ActionController::RoutingError

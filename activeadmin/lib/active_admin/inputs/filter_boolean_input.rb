@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   module Inputs
     class FilterBooleanInput < ::Formtastic::Inputs::BooleanInput

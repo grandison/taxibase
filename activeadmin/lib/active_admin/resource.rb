@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/resource/action_items'
 require 'active_admin/resource/controllers'
 require 'active_admin/resource/menu'

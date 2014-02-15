@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/views/components/action_list_popover'
 
 module ActiveAdmin

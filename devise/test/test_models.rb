@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Configurable < User
   devise :database_authenticatable, :confirmable, :rememberable, :timeoutable, :lockable,
          :stretches => 15, :pepper => 'abcdef', :allow_unconfirmed_access_for => 5.days,

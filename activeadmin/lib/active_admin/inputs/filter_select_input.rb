@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   module Inputs
     class FilterSelectInput < ::Formtastic::Inputs::SelectInput

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/comments/comment'
 require 'active_admin/comments/views'
 require 'active_admin/comments/show_page_helper'

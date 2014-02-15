@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 # These tests show the memory leak that is currently in Active Admin. They

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Formtastic
   module Inputs
     # A select input is used to render a `<select>` tag with a series of options to choose from.

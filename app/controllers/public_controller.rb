@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PublicController < ApplicationController
   layout "public"
   def regulations

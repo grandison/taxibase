@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see a menu item for "([^"]*)"$/ do |name|
   page.should have_css('#tabs li a', :text => name)
 end

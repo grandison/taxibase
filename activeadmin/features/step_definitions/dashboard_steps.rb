@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see the default welcome message$/ do
   step %{I should see "Welcome to Active Admin" within "#dashboard_default_message"}
 end

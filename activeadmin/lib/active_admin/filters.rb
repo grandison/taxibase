@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'active_admin/filters/dsl'
 require "active_admin/filters/resource_extension"
 require 'active_admin/filters/forms'

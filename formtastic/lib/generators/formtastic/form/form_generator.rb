@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- encoding : utf-8 -*-
 module Formtastic
   # Generates a Formtastic form partial based on an existing model. It will not overwrite existing
   # files without confirmation.

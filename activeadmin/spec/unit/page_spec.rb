@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- encoding : utf-8 -*-
 
 require 'spec_helper' 
 require File.expand_path('config_shared_examples', File.dirname(__FILE__))

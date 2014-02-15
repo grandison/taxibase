@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   class FormBuilder < ::Formtastic::FormBuilder
 

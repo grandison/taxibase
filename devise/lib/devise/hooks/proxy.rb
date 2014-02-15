@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Devise
   module Hooks
     # A small warden proxy so we can remember, forget and

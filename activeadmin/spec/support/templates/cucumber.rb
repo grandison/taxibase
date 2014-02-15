@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require File.expand_path('config/environments/test', Rails.root)
 
 # rails/railties/lib/rails/test_help.rb aborts if the environment is not 'test'. (Rails 3.0.0.beta3)

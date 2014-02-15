@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Formtastic
   module Inputs
     class DatetimeInput < DatetimeSelectInput

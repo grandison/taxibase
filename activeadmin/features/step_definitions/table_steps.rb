@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class HtmlTableToTextHelper
   def initialize(html, table_css_selector = "table")
     @html = html

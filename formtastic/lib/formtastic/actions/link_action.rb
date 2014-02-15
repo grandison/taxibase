@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Outputs a link wrapped in the standard `<li>` wrapper. This the default for `:cancel` actions.
 # The link's URL defaults to Rails' built-in `:back` macro (the HTTP referrer, or Javascript for the
 # browser's history), but can be altered with the `:url` option.

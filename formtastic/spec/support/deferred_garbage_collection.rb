@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Taken from http://makandra.com/notes/950-speed-up-rspec-by-deferring-garbage-collection
 class DeferredGarbageCollection
 

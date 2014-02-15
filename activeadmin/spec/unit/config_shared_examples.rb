@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 shared_examples_for "ActiveAdmin::Config" do
   describe "namespace" do
     it "should return the namespace" do

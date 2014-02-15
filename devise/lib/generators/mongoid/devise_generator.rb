@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'rails/generators/named_base'
 require 'generators/devise/orm_helpers'
 

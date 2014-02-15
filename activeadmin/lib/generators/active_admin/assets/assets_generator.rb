@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveAdmin
   module Generators
     class AssetsGenerator < Rails::Generators::Base

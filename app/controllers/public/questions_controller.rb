@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Public::QuestionsController < ApplicationController
   def create
     @question = Question.create(params[:question])

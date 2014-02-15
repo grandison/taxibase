@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Deprecate: Copied verbatim from Rails source, remove once we move to Rails 4 only.
 require 'thread_safe'
 require 'openssl'

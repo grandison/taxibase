@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ChangeLastActiveToDateInAdminUsers < ActiveRecord::Migration
   def up
     change_column :admin_users, :last_active_at, :datetime

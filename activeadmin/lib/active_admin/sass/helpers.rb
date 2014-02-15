@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'sass'
 require 'sass/script/functions'
 require 'sass-rails' if ActiveAdmin::DependencyChecker.rails_3_1?

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 CSVLib = if RUBY_VERSION =~ /^1.8/
             require 'fastercsv'
             FasterCSV

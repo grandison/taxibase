@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Then /^I should see the site title "([^"]*)"$/ do |title|
   page.should have_css('h1#site_title', :text => title)
 end
