@@ -15,8 +15,10 @@ set :repo_url, "git@github.com:grandison/taxibase.git"
 set :scm, :git
 set :deploy_via, :remote_cache
 set :user, :taxibase
+set :deploy_to, "/var/www/rails/#{fetch(:application)}"
 
 set :unicorn_binary, "bundle exec unicorn"
+set :shared_path, "#{fetch(:deploy_to)}/shared"
 set :unicorn_config, "#{fetch(:shared_path)}/config/unicorn.rb"
 set :unicorn_pid, "#{fetch(:shared_path)}/pids/unicorn.pid"
 
@@ -40,7 +42,6 @@ set :unicorn_pid, "#{fetch(:shared_path)}/pids/unicorn.pid"
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
-set :deploy_to, "/var/www/rails/#{fetch(:application)}"
 
  set :ssh_options, {
    # keys: %w(/home/rlisowski/.ssh/id_rsa),
@@ -74,7 +75,7 @@ namespace :deploy do
   end
 
   task :stop_unicorn do
-    on roles(:app), in: :sequence, wait: 5 do |host|
+    on roles(:app), in: :sequence, wait: 10 do |host|
       execute "test -e #{fetch(:unicorn_pid)} && kill `cat #{fetch(:unicorn_pid)}`; true"
     end
   end
