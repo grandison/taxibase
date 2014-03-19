@@ -2,12 +2,11 @@
 ActiveAdmin.register Taxist do
   actions :all, :except => [:new]
 
-  filter :first_name
+  filter :first_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
   filter :last_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
   filter :third_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
   filter :pasport_number, :if => ->(user){ current_admin_user.can?(:view, :pasport)}
   filter :vodit_ustov_number
-  filter :pozivnoy
 
   menu :priority => 1
 
@@ -58,24 +57,23 @@ ActiveAdmin.register Taxist do
         link_to(taxist.first_name, taxist)
       end
     end
-    column :pozivnoy
   end
 
   show do
     attributes_table do
-      if current_admin_user.can?(:view, :photo)
+      # if current_admin_user.can?(:view, :photo)
         row :photo do |taxist|
           if taxist.photo.present?
             image_tag(taxist.photo, style: "max-width:100px;")
           end
         end
-      end
+      # end
       if current_admin_user.can?(:view, :fio)
         row :first_name
         row :last_name
         row :third_name
       else
-        row :first_name
+        row :last_name
       end
       if current_admin_user.can?(:view, :address)
         row :address
@@ -121,21 +119,26 @@ ActiveAdmin.register Taxist do
           end
         end
       end
-      row :pozivnoy
       row :fssp_info
       row :reputations do |taxist|
         render taxist.reputations
       end
-      row :addons do |taxist|
-        render taxist.addons
+      if current_admin_user.can?(:view, :addons)
+        row :addons do |taxist|
+          render taxist.addons
+        end
       end
-      row :autos do |taxist|
-        taxist.autos.map do |tr|
-          tr.description
-        end.join("br").html_safe
+      if current_admin_user.can?(:view, :autos)
+        row :autos do |taxist|
+          taxist.autos.map do |tr|
+            tr.description
+          end.join("br").html_safe
+        end
       end
     end
-    render "addons/form"
+    if current_admin_user.can?(:view, :addons)
+      render "addons/form"
+    end
   end
 
   form do |f|
@@ -170,7 +173,6 @@ ActiveAdmin.register Taxist do
         end
       end
       f.input :anketa
-      f.input :pozivnoy
       f.input :fssp_info
       f.has_many :reputations do |rep|
         rep.input :info

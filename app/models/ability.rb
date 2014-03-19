@@ -18,6 +18,8 @@ class Ability
       can :view, :vodit_ustov_file
       can :view, :taxist_relatives
       can :view, :anketa
+      can :view, :addons
+      can :view, :autos
       can :manage, NotCheckedTaxist
       if user.level.number == 0 # Администратор
         can :manage, :all
@@ -58,6 +60,8 @@ class Ability
         cannot :view, :vodit_ustov_file
         cannot :view, :taxist_relatives
         cannot :view, :anketa
+        cannot :view, :addons
+        cannot :view, :autos
       end
     end
   end

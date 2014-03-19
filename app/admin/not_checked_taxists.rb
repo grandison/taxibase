@@ -5,7 +5,6 @@ ActiveAdmin.register NotCheckedTaxist do
   filter :third_name
   filter :pasport_number
   filter :vodit_ustov_number
-  filter :pozivnoy
 
   scope_to :current_admin_user, :association_method => :not_checked_taxists
 
@@ -29,18 +28,15 @@ ActiveAdmin.register NotCheckedTaxist do
   index :download_links => false do
     column :photo do |taxist|
       if taxist.photo.present?
-        taxist.pasport_scans.map do |ps|
-          link_to(ps.file.url, class: :fancybox) do
-            image_tag("/images/photo.png", style: "max-width:30px;")
-          end
-        end.join("<br>").html_safe
+        link_to(taxist.photo.url, class: :fancybox) do
+          image_tag("/images/photo.png", style: "max-width:30px;")
+        end
       end
     end
     column :vodit_ustov_number
     column :fio do |taxist|
       link_to(taxist.fio, taxist)
     end
-    column :pozivnoy
   end
 
   show do
@@ -87,7 +83,6 @@ ActiveAdmin.register NotCheckedTaxist do
           image_tag(taxist.anketa, style: "max-width:100px;")
         end
       end
-      row :pozivnoy
       row :fssp_info
       row :reputations do |taxist|
         render taxist.reputations
@@ -125,7 +120,6 @@ ActiveAdmin.register NotCheckedTaxist do
         f.input :am
       end
       f.input :anketa
-      f.input :pozivnoy
       f.input :fssp_info
       f.has_many :reputations do |rep|
         rep.input :info

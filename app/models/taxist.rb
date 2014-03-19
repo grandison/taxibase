@@ -33,4 +33,8 @@ class Taxist < ActiveRecord::Base
     self.last_name = last_name.downcase if last_name
     self.third_name = third_name.downcase if third_name
   end
+
+  def store_dir
+    "taxist"
+  end
 end
