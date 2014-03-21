@@ -1,4 +1,8 @@
 ru:
+  views:
+    pagination:
+      next: Дальше
+      last: "Конец"
   active_admin:
     batch_actions:
       labels:

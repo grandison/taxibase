@@ -440,6 +440,10 @@ body.active_admin table.index_table th a, body.active_admin table.index_table th
   display: none;
 }
 
+span.next, span.last {
+  display: none;
+}
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
