@@ -51,6 +51,7 @@ set :keep_releases, 5
  }
 
 set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{public/uploads}
 set :unicorn_config, "#{shared_path}/config/unicorn.rb"
 
 SSHKit.config.command_map[:rake]  = "bundle exec rake"
