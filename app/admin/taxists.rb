@@ -2,8 +2,8 @@
 ActiveAdmin.register Taxist do
   actions :all, :except => [:new]
 
-  filter :first_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
-  filter :last_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
+  filter :first_name
+  filter :last_name
   filter :third_name, :if => ->(user){ current_admin_user.can?(:view, :fio)}
   filter :pasport_number, :if => ->(user){ current_admin_user.can?(:view, :pasport)}
   filter :vodit_ustov_number
@@ -56,6 +56,9 @@ ActiveAdmin.register Taxist do
       column :first_name do |taxist|
         link_to(taxist.first_name, taxist)
       end
+      column :last_name do |taxist|
+        link_to(taxist.first_name, taxist)
+      end
     end
   end
 
@@ -68,9 +71,9 @@ ActiveAdmin.register Taxist do
           end
         end
       # end
+      row :first_name
+      row :last_name
       if current_admin_user.can?(:view, :fio)
-        row :first_name
-        row :last_name
         row :third_name
       else
         row :last_name
