@@ -57,7 +57,7 @@ ActiveAdmin.register Taxist do
         link_to(taxist.first_name, taxist)
       end
       column :last_name do |taxist|
-        link_to(taxist.first_name, taxist)
+        link_to(taxist.last_name, taxist)
       end
     end
   end
