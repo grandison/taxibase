@@ -27,11 +27,11 @@ ActiveAdmin.register NotCheckedTaxist do
 
   index :download_links => false do
     column :photo do |taxist|
-      if taxist.photo.present?
-        link_to(taxist.photo.url, class: :fancybox) do
+      taxist.taxist_photos.map do |photo|
+        link_to(photo.file.url, class: :fancybox) do
           image_tag("/images/photo.png", style: "max-width:30px;")
         end
-      end
+      end.join("<br>").html_safe
     end
     column :vodit_ustov_number
     column :fio do |taxist|
@@ -42,9 +42,11 @@ ActiveAdmin.register NotCheckedTaxist do
   show do
     attributes_table do
       row :photo do |taxist|
-        if taxist.photo.present?
-          image_tag(taxist.photo, style: "max-width:100px;")
-        end
+        taxist.taxist_photos.map do |photo|
+          link_to(photo.file.url, class: :fancybox) do
+            image_tag(photo.file, style: "max-width:100px;")
+          end
+        end.join("<br>").html_safe
       end
       row :first_name
       row :last_name
@@ -92,7 +94,9 @@ ActiveAdmin.register NotCheckedTaxist do
 
   form do |f|
     f.inputs "" do
-      f.input :photo, :as => :file, :hint => f.object.photo.present? ? f.template.image_tag(f.object.photo.url, :style => "max-width:200px;") : f.template.content_tag(:span, "нет фото")
+      f.has_many :taxist_photos do |taxist_photo|
+        taxist_photo.input :file, :as => :file, :hint => taxist_photo.object.file.present? ? taxist_photo.template.image_tag(taxist_photo.object.file.url, :style => "max-width:200px;") : taxist_photo.template.content_tag(:span, "нет фото")
+      end
       f.input :first_name
       f.input :last_name
       f.input :third_name

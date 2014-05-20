@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214194622) do
+ActiveRecord::Schema.define(:version => 20140520204140) do
 
   create_table "accidents", :force => true do |t|
     t.text     "info"
@@ -175,6 +175,13 @@ ActiveRecord::Schema.define(:version => 20140214194622) do
   create_table "statistics", :force => true do |t|
     t.text     "key"
     t.text     "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "taxist_photos", :force => true do |t|
+    t.integer  "taxist_id"
+    t.string   "file"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -136,6 +136,9 @@ ru:
       auto:
         one: ""
         other: Зарегистрированный автотранспорт
+      taxist_photo:
+        one: "Фото"
+        other: "Фото"
     attributes:
       taxist: 
         first_name: Имя
@@ -208,6 +211,8 @@ ru:
         email: Емейл
         phone: Номер телефона
         text: Текст вопроса
+      taxist_photo:
+        file: Файл
     errors:
       models:
         taxist:
