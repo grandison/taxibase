@@ -27,7 +27,7 @@ ActiveAdmin.register NotCheckedTaxist do
 
   index :download_links => false do
     column :photo do |taxist|
-      taxist.taxist_photos.map do |photo|
+      taxist.taxist_photos.with_photo.map do |photo|
         link_to(photo.file.url, class: :fancybox) do
           image_tag("/images/photo.png", style: "max-width:30px;")
         end
@@ -42,7 +42,7 @@ ActiveAdmin.register NotCheckedTaxist do
   show do
     attributes_table do
       row :photo do |taxist|
-        taxist.taxist_photos.map do |photo|
+        taxist.taxist_photos.with_photo.map do |photo|
           link_to(photo.file.url, class: :fancybox) do
             image_tag(photo.file, style: "max-width:100px;")
           end
